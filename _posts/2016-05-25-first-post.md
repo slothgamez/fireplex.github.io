@@ -5,4 +5,4 @@ description: ""
 category: 
 tags: []
 ---
-<h1>Ben is amazing!</h1>
+[Text](http://fireplex.github.io/contact/thanks)
