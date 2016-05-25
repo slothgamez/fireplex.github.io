@@ -17,11 +17,10 @@
         {% for my_page in site.pages %}
           {% if my_page.title %}
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          <a href="contact/thanks" class="page-link">Test</a>
           {% endif %}
         {% endfor %}
       </div>
-      
-      <a href="contact/thanks" class="menu-icon">Test</a>
     </nav>
 
   </div>
