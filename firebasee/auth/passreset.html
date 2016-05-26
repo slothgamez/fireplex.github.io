@@ -63,13 +63,10 @@ ref.resetPassword(credentials, function(error) {
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
           <br/><br/>
-          
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
-          <!-- Colored FAB button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-            <i class="material-icons">add</i>
-          </button>
+
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
@@ -78,7 +75,6 @@ ref.resetPassword(credentials, function(error) {
           </div>
         </div>
       </div>
-
 
     </div>
   </main>
