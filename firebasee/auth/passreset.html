@@ -6,7 +6,7 @@
   <title>Password Reset</title>
 
   <!-- Material Design Theming -->
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="h">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
@@ -62,7 +62,9 @@ ref.resetPassword(credentials, function(error) {
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <br/><br/>
-          <button enabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Send Password Reset Request</button>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">add</i>
+          </button>
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Password Reset Status: <span id="quickstart-sign-in-status">Unknown</span>
