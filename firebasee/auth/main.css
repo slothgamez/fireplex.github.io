@@ -36,6 +36,7 @@ li a {
   line-height: 25px;
 }
 #test-button {
+  background-color:green;
   color:red;
 }
 #quickstart-sign-in-status {
