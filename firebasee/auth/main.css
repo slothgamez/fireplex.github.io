@@ -35,7 +35,7 @@ li a {
   margin-top: 20px;
   line-height: 25px;
 }
-.mdl-button--colored {
+.mdl-button {
   color:red;
 }
 #quickstart-sign-in-status {
