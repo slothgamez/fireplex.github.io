@@ -15,7 +15,7 @@ limitations under the License.
 <head>
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email/Password Authentication Example</title>
+  <title>Website Title</title>
 
   <!-- Material Design Theming -->
   <link rel="stylesheet" href="http://fireplex.github.io/mdl/material.orange-indigo.min.css">
@@ -35,6 +35,19 @@ limitations under the License.
   };
   firebase.initializeApp(config);
 </script>
+
+  <script type="text/javascript">
+    function initApp() {
+      document.getElementById('SomeAction').addEventListener('click', menuLinkOne, false);
+    }
+    
+    function menulinkOne() {
+      
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
 </head>
 <body></body>
   <!-- Always shows a header, even in smaller screens. -->
@@ -60,7 +73,7 @@ limitations under the License.
 
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
     for="demo-menu-lower-right">
-  <li class="mdl-menu__item">Some Action</li>
+  <li class="mdl-menu__item" id="SomeAction">Some Action</li>
   <li class="mdl-menu__item">Another Action</li>
   <li disabled class="mdl-menu__item">Disabled Action</li>
   <li class="mdl-menu__item">Yet Another Action</li>
