@@ -21,7 +21,7 @@
 }
 
 .is-compact .portfolio-logo-row {
-  min-height: auto;
+  min-height: 100px;
 }
 
 .portfolio-logo {
