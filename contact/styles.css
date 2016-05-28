@@ -17,11 +17,11 @@
 }
 
 .portfolio-logo-row {
-  min-height: 100px;
+  min-height: 200px;
 }
 
 .is-compact .portfolio-logo-row {
-  min-height: 100px;
+  min-height: auto;
 }
 
 .portfolio-logo {
