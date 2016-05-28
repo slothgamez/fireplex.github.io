@@ -17,7 +17,7 @@
 }
 
 .portfolio-logo-row {
-  min-height: 200px;
+  min-height: 100px;
 }
 
 .is-compact .portfolio-logo-row {
@@ -27,8 +27,8 @@
 .portfolio-logo {
   background: url() 50% no-repeat;
   background-size: cover;
-  height: 50px;
-  width: 50px;
+  height: 150px;
+  width: 150px;
   margin: auto auto 10px;
 }
 
