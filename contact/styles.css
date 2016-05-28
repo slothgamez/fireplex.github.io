@@ -12,7 +12,9 @@
   font-weight: 300;
 }
 
-
+.is-compact .mdl-layout__title span {
+  display: none;
+}
 
 .portfolio-logo-row {
   min-height: 100px;
