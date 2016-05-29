@@ -99,7 +99,7 @@ limitations under the License.
         var url = uploadTask.snapshot.metadata.downloadURLs[0];
         console.log('File available at', url);
         // [START_EXCLUDE]
-        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+        document.getElementById('linkbox').innerHTML = <img src=url>
         // [END_EXCLUDE]
       });
       // [END oncomplete]
