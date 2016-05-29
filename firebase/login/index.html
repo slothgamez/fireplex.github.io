@@ -143,6 +143,15 @@
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
     }
+    var signinStatus = document.getElementById('quickstart-sign-in-status').innerHtml;
+    
+    if (signinStatus == "Signed in") {
+      setTimeout(goHome, 3000);
+    }
+    
+    function goHome() {
+      window.location.href = ("http://fireplex.github.io");
+    }
     window.onload = function() {
       initApp();
     };
