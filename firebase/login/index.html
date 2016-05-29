@@ -87,7 +87,10 @@ limitations under the License.
       // [START_EXCLUDE]
       document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
-      window.location.href = "http://fireplex.github.io"
+      var signinStatus = document.getElementById('quickstart-sign-in').innerHtml;
+      if (signinStatus == "Signed in") {
+        window.location.href = "http://fireplex.github.io";
+      }
     }
     // [END buttoncallback]
     /**
