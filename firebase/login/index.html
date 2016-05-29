@@ -88,9 +88,6 @@ limitations under the License.
       document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
       var signinStatus = document.getElementById('quickstart-sign-in').innerHtml;
-      if (signinStatus == "Signed in") {
-        window.location.href = "http://fireplex.github.io";
-      }
     }
     // [END buttoncallback]
     /**
@@ -154,6 +151,7 @@ limitations under the License.
     }
     window.onload = function() {
       initApp();
+      window.alert("This is an alert box")
     };
   </script>
 </head>
