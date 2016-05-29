@@ -104,6 +104,10 @@ limitations under the License.
      *
      * When signed in, we also authenticate to the Firebase Realtime Database.
      */
+    function goHome() {
+      window.location.href = "http://fireplex.github.io";
+    }
+    
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -151,7 +155,7 @@ limitations under the License.
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      document.getElementById('home-button').addEventListener('click', goHome);
+      //document.getElementById('home-button').addEventListener('click', goHome);
     }
     
     window.onload = function() {
