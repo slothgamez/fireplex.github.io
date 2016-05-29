@@ -142,15 +142,15 @@
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      // Redirect user if they're signed in.
+      // Listen for sign in status
       var signinStatus = document.getElementById('quickstart-sign-in-status').innerHtml;
       if (signinStatus == "Signed in") {
       setTimeout(goHome, 3000);
       }
-      
-      function goHome() {
+    }
+    // Redirect user to homepage
+    function goHome() {
       window.location.href = ("http://fireplex.github.io");
-      }
     }
     window.onload = function() {
       initApp();
