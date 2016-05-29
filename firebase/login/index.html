@@ -120,6 +120,10 @@ limitations under the License.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          var confSignIn = confirm("Hello " + displayName + "! You've signed in successfully to " + email + ". Redirect home?")
+          if (confSignIn == true) {
+            window.location.href = "http://fireplex.github.io";
+          }
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -181,10 +185,7 @@ limitations under the License.
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
-            <div>Google OAuth Access Token:</div>
-            <pre><code id="quickstart-oauthtoken">null</code></pre>
           </div>
         </div>
       </div>
