@@ -116,6 +116,7 @@
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          setTimeout(goHome, 3000);
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -143,14 +144,10 @@
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       // Listen for sign in status
-      var signinStatus = document.getElementById('quickstart-sign-in-status').innerHtml;
-      if (signinStatus == "Signed in") {
-      setTimeout(goHome, 3000);
-      }
     }
     // Redirect user to homepage
     function goHome() {
-      window.location.href = ("http://fireplex.github.io");
+      window.location.href = ('http://fireplex.github.io');
     }
     window.onload = function() {
       initApp();
