@@ -104,10 +104,6 @@ limitations under the License.
      *
      * When signed in, we also authenticate to the Firebase Realtime Database.
      */
-    function goHome() {
-      window.location.href = "http://fireplex.github.io";
-    }
-    
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -155,7 +151,6 @@ limitations under the License.
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      //document.getElementById('home-button').addEventListener('click', goHome);
     }
     
     window.onload = function() {
@@ -192,7 +187,6 @@ limitations under the License.
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <button class="mdl-button mdl-js-button mdl-button--raised" id="home-button">Go home</button>
           </div>
 </body>
 </html>
