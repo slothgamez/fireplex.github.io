@@ -121,7 +121,10 @@ limitations under the License.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          window.confirm("Sign in successful, redirect home?")
+          var conf = confirm("Sign in successful, redirect home?")
+          if (conf == true) {
+            window.location.href = "http://fireplex.github.io";
+          }
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
