@@ -138,7 +138,6 @@ limitations under the License.
           document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
-          document.getElementById('sign-out-button').style.display= "none";
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -147,19 +146,10 @@ limitations under the License.
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      }
-      toggleSignIn();
-      //var signinStat = document.getElementById('quickstart-sign-in').innerHtml;
-      //if (signinStat == "Signed in") {
-      //  document.getElementById('sign-out-button').style.display= "block";
-      //} else {
-      //  document.getElementById('sign-out-button').style.display= "none";
-      //  toggleSignIn();
-      //}
     }
     window.onload = function() {
       initApp();
-    }
+    };
   </script>
 </head>
 <!--<body>
