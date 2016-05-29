@@ -138,6 +138,7 @@ limitations under the License.
           //document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
+          document.getElementById('sign-out-button').style.display= "none";
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -147,6 +148,13 @@ limitations under the License.
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       toggleSignIn();
+      
+      signinStat = var document.getElementById('quickstart-sign-in').innerHtml;
+      if (signinStat == "Signed in") {
+        document.getElementById('sign-out-button').style.display= "block";
+      else
+        document.getElementById('sign-out-button').style.display= "none";
+      }
     }
     window.onload = function() {
       initApp();
@@ -178,6 +186,7 @@ limitations under the License.
 
           <!-- Button that handles sign-in/sign-out -->
           <!--<button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with Google</button>-->
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="sign-out-button">Sign out</button>
           <div id="quickstart-sign-in"></div>
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
