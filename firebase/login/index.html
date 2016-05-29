@@ -18,7 +18,7 @@ limitations under the License.
   <title>Google Authentication with Popup</title>
 
   <!-- Material Design Theming -->
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-yellow.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
@@ -151,7 +151,13 @@ limitations under the License.
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('home-button').addEventListener('click', goHome, false);
     }
+    
+    function goHome() {
+      window.location.href = "http://fireplex.github.io";
+    }
+    
     window.onload = function() {
       initApp();
     };
@@ -186,15 +192,7 @@ limitations under the License.
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <!--<div>Firebase auth <code>currentUser</code> object value:</div>
-            <pre><code id="quickstart-account-details">null</code></pre>
-            <div>Google OAuth Access Token:</div>
-            <pre><code id="quickstart-oauthtoken">null</code></pre>-->
           </div>
-        <!--</div>
-      </div>
-    </div>
-  </main>
-</div>
-</body>-->
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="home-button">Go home</button>
+</body>
 </html>
