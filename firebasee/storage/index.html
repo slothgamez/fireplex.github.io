@@ -68,6 +68,7 @@ limitations under the License.
             <input type="file" id="file" name="file"/>
             <h6>File URL:</h6>
             <span id="linkbox"></span>
+            <span id="image"></span>
           </div>
         </div>
       </div>
@@ -102,6 +103,7 @@ limitations under the License.
         console.log('File available at', url);
         // [START_EXCLUDE]
         document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+        document.getElementById('Image').innerHTML = 
         // [END_EXCLUDE]
       });
       // [END oncomplete]
