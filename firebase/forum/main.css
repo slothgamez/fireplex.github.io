@@ -257,7 +257,7 @@ a {
 }
 .post .comments-container .text {
     margin-left: 5px;
-    color: #444;
+    color: #111;
     transition: all 0.2s;
 }
 .post .add-comment{
