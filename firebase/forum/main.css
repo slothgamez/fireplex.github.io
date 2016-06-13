@@ -166,10 +166,10 @@ a {
 }
 */
 /* Drawer */
-
+/*
 .mdl-layout__drawer-button {
     display: none;
-}
+}*/
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link.is-active,
 .is-active .mdl-menu__item {
     color: black;
