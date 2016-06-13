@@ -39,7 +39,7 @@ a {
     overflow-x: visible;
     overflow: visible;
 }
-/* Overrides MDL colors */
+/* Overrides MDL colors 
 .mdl-layout.is-upgraded .mdl-layout__tab.is-active::after,
 .header .mdl-textfield__label:after {
     background-color: #FFCA28;
