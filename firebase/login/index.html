@@ -45,16 +45,9 @@
      */
     function handlePasswordReset() {
       var auth = firebase.auth();
-      var emailAddress = "";
-      var emailAddress = prompt("Enter the email for the account you need the password resetting.");
-      if (emailAddress != null) {
-        auth.sendPasswordResetEmail(emailAddress).then(function() {
-          // Email sent.
-        }, function(error) {
-          // An error happened.
-        });
-        alert('Reset email sent.');
-      }
+      var emailAddress = document.getElementById('prEmail').value;
+      auth.sendPasswordResetEmail(emailAddress);
+      alert('Reset email sent.');
     }
     /**
      * Handles the sign in button press.
@@ -219,6 +212,7 @@
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="password-reset" name="passwordreset">Forgot Password?</button>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="prEmail" placeholder="Password reset email"/>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
