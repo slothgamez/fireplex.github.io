@@ -55,10 +55,22 @@
           var uid = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
-          document.getElementById('account-email').innerHTML = "Email: " + email;
-       
-      }
-    });
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify({
+            displayName: displayName,
+            email: email,
+            emailVerified: emailVerified,
+            photoURL: photoURL,
+            isAnonymous: isAnonymous,
+            uid: uid,
+            refreshToken: refreshToken,
+            providerData: providerData
+          }, null, '  ');
+          // [END_EXCLUDE]
+        } else {
+          document.getElementById('quickstart-account-details').textContent = 'null';
+        }
+      });
+    }
     window.onload = function() {
       initApp();
     };
