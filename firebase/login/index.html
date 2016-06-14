@@ -170,9 +170,9 @@
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
+      document.getElementById('password-reset').addEventListener('click', handlePasswordReset, false);
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-      document.getElementById('password-reset').addEventListener('click', handlePasswordReset, false);
     }
     window.onload = function() {
       initApp();
