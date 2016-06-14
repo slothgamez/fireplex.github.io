@@ -73,6 +73,28 @@
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
+          //DISPLAY NAME BOX ********************
+          document.getElementById('account-display-name').textContent = JSON.stringify({
+            displayName: displayName,
+          }, null, '  ');
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE silent]
+          document.getElementById('account-display-name').textContent = 'null';
+          // [END_EXCLUDE]
+        }
+          //EMAIL BOX *************
+          document.getElementById('account-email').textContent = JSON.stringify({
+            email: email,
+          }, null, '  ');
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE silent]
+          document.getElementById('account-email').textContent = 'null';
+          // [END_EXCLUDE]
+        }
       });
     }
     window.onload = function() {
@@ -111,6 +133,8 @@
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
+            <pre><code id="account-display-name">null</code></pre>
+            <pre><code id="account-email">null</code></pre>
           </div>
           </div>
         </main>
