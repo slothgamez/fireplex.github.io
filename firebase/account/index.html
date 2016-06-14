@@ -55,6 +55,7 @@
           var uid = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
+          document.getElementById('account-email').innerHTML = email;
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
