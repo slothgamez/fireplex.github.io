@@ -56,12 +56,6 @@
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          var confSignIn = confirm("Hello " + displayName + "! You've signed in successfully to " + email + ". Redirect home?")
-          if (confSignIn == true) {
-            window.location.href = "http://fireplex.github.io";
-          }
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -76,18 +70,10 @@
         } else {
           // User is signed out.
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
       });
-      // [END authstatelistener]
-      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
     }
     window.onload = function() {
       initApp();
