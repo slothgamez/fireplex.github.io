@@ -41,66 +41,74 @@
 </head>
   <script type="text/javascript">
     /**
-     * Function called when clicking the Login/Logout button.
+     * Handles the sign in button press.
      */
-    // [START buttoncallback]
     function toggleSignIn() {
-      if (!firebase.auth().currentUser) {
-        // [START createprovider]
-        var provider = new firebase.auth.GoogleAuthProvider();
-        // [END createprovider]
-        // [START addscopes]
-        provider.addScope('https://www.googleapis.com/auth/plus.login');
-        // [END addscopes]
-        // [START signin]
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
-          // The signed-in user info.
-          var user = result.user;
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-oauthtoken').textContent = token;
-          // [END_EXCLUDE]
-        }).catch(function(error) {
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
           // [START_EXCLUDE]
-          if (errorCode === 'auth/account-exists-with-different-credential') {
-            alert('You have already signed up with a different auth provider for that email.');
-            // If you are using multiple auth providers on your app you should handle linking
-            // the user's accounts here.
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
           } else {
             console.error(error);
           }
           // [END_EXCLUDE]
         });
-        // [END signin]
-      } else {
-        // [START signout]
-        firebase.auth().signOut();
-        // [END signout]
+        // [END authwithemail]
       }
-      // [START_EXCLUDE]
-      //document.getElementById('quickstart-sign-in').disabled = false;
-      // [END_EXCLUDE]
+      document.getElementById('quickstart-sign-in').disabled = true;
     }
-    // [END buttoncallback]
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          console.error(error);
+        }
+        // [END_EXCLUDE]
+      });
+      // [END createwithemail]
+    }
     /**
-     * initApp handles setting up the Firebase context and registering
-     * callbacks for the auth status.
+     * Handles registering callbacks for the auth status.
      *
-     * The core initialization is in firebase.App - this is the glue class
-     * which stores configuration. We provide an app name here to allow
-     * distinguishing multiple app instances.
-     *
-     * This method also registers a listener with firebase.auth().onAuthStateChanged.
-     * This listener is called when the user is signed in or out, and that
-     * is where we update the UI.
+     * This method registers a listener with firebase.auth().onAuthStateChanged. This listener is called when
+     * the user is signed in or out, and that is where we update the UI.
      *
      * When signed in, we also authenticate to the Firebase Realtime Database.
      */
@@ -118,7 +126,7 @@
           var uid = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
-          // [START_EXCLUDE]
+          // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           var confSignIn = confirm("Hello " + displayName + "! You've signed in successfully to " + email + ". Redirect home?")
@@ -138,19 +146,19 @@
           // [END_EXCLUDE]
         } else {
           // User is signed out.
-          // [START_EXCLUDE]
+          // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
           document.getElementById('quickstart-account-details').textContent = 'null';
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
           // [END_EXCLUDE]
         }
-        // [START_EXCLUDE]
-        //document.getElementById('quickstart-sign-in').disabled = false;
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
     }
     window.onload = function() {
       initApp();
@@ -187,13 +195,20 @@
             <h2 class="mdl-card__title-text">Login with Google</h2>
             <p>Sign in with your Google account below.</p>
 
-            <!-- Button that handles sign-in/sign-out -->
-            <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" >Sign in with Google</button>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <br/><br/>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
 
-            <!-- Container where we'll display the user details -->
-            <div class="quickstart-user-details-container">
-              Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            </div>
+          <!-- Container where we'll display the user details -->
+          <div class="quickstart-user-details-container">
+            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <pre><code id="quickstart-account-details">null</code></pre>
+          </div>
           </div>
         </main>
         <footer class="mdl-mini-footer">
