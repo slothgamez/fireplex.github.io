@@ -56,7 +56,7 @@
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          /*document.getElementById('quickstart-account-details').textContent = JSON.stringify({
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
             emailVerified: emailVerified,
@@ -73,11 +73,8 @@
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
-        */
-          //EMAIL BOX *************
-          document.getElementById('account-email').textContent = email;
-      }
-    })
+      });
+    }
     window.onload = function() {
       initApp();
     };
