@@ -43,16 +43,16 @@
     /**
      * Handles the password reset process
      */
-    function handlePasswordReset() {
-      var resetEmail = prompt("Enter the email for the account you need the password resetting.");
-      if (resetEmail != null) {
-        auth.sendPasswordResetEmail(resetEmail).then(function() {
-          alert("Password reset email sent to " + resetEmail);
-        } else {
-          console.error("Error");
-        }
-      }
-    }
+    //function handlePasswordReset() {
+    //  var resetEmail = prompt("Enter the email for the account you need the password resetting.");
+    //  if (resetEmail != null) {
+    //    auth.sendPasswordResetEmail(resetEmail).then(function() {
+    //      alert("Password reset email sent to " + resetEmail);
+    //    } else {
+    //      console.error("Error");
+    //    }
+    //  }
+    //}
     /**
      * Handles the sign in button press.
      */
