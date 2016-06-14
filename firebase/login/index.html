@@ -47,12 +47,14 @@
       var auth = firebase.auth();
       var emailAddress = "ampersand2909@gmail.com";
       var emailAddress = prompt("Enter the email for the account you need the password resetting.");
-      auth.sendPasswordResetEmail(emailAddress).then(function() {
-        // Email sent.
-      }, function(error) {
-        // An error happened.
-      });
-      alert('Reset email sent.');
+      if (emailAddress != null) {
+        auth.sendPasswordResetEmail(emailAddress).then(function() {
+          // Email sent.
+        }, function(error) {
+          // An error happened.
+        });
+        alert('Reset email sent.');
+      }
     }
     /**
      * Handles the sign in button press.
