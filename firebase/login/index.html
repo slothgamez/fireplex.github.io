@@ -41,18 +41,6 @@
 </head>
   <script type="text/javascript">
     /**
-     * Handles the password reset process
-     */
-    function handlePasswordReset() {
-      var auth = firebase.auth();
-      var emailAddress = document.getElementById('prEmail').value;
-      auth.sendPasswordResetEmail(emailAddress).then(function() {
-        alert('Reset email sent.');
-      }, function(error) {
-        console.log(error)
-      });
-    }
-    /**
      * Handles the sign in button press.
      */
     function toggleSignIn() {
@@ -169,7 +157,6 @@
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
-      document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
     }
@@ -214,8 +201,7 @@
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
           &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="password-reset" name="passwordreset">Forgot Password?</button>
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="prEmail" placeholder="Password reset email"/>
+          <a href="http://fireplex.github.io/firebase/reset-password"><button class="mdl-button mdl-js-button mdl-button--raised">Forgot Password?</button></a>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
