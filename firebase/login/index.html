@@ -45,7 +45,12 @@
      */
     function handlePasswordReset() {
       var resetEmail = prompt("Enter the email for the account you need the password resetting.");
-      auth.sendPasswordResetEmail(resetEmail)
+      sendResetEmail();
+    }
+    function sendResetEmail() {
+      var resetEmail = document.getElementById('resetEmail').value;
+      auth.sendPasswordResetEmail(resetEmail);
+      alert("Reset email sent.")
     }
     /**
      * Handles the sign in button press.
