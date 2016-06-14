@@ -75,16 +75,7 @@
         }
         */
           //EMAIL BOX *************
-          document.getElementById('account-email').textContent = JSON.stringify({
-            email: email,
-          }, null, '  ');
-          // [END_EXCLUDE]
-        } else {
-          // User is signed out.
-          // [START_EXCLUDE silent]
-          document.getElementById('account-email').textContent = 'null';
-          // [END_EXCLUDE]
-        }
+          document.getElementById('account-email').textContent = email: email,
       });
     }
     window.onload = function() {
