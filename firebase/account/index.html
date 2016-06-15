@@ -72,6 +72,12 @@
         // An error happened.
       });
     }
+    function accountImageChange() {
+      var image = document.getElementById('account-picture');
+      if (image.src.match("silhouette")) {
+        image.src = 
+      }
+    }
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -113,6 +119,52 @@
       document.getElementById('nameEditbtn').style.visibility = 'visible';
       initApp();
     };
+    
+    
+    
+    
+    
+    
+    var auth = firebase.auth();
+    var storageRef = firebase.storage().ref();
+    function handleFileSelect(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      var file = evt.target.files[0];
+      var metadata = {
+        'contentType': file.type
+      };
+      // Push to child path.
+      var uploadTask = storageRef.child('images').put(file, metadata);
+      // Listen for errors and completion of the upload.
+      // [START oncomplete]
+      uploadTask.on('state_changed', null, function(error) {
+        // [START onfailure]
+        console.error('Upload failed:', error);
+        // [END onfailure]
+      }, function() {
+        console.log('Uploaded',uploadTask.snapshot.totalBytes,'bytes.');
+        console.log(uploadTask.snapshot.metadata);
+        var url = uploadTask.snapshot.metadata.downloadURLs[0];
+        console.log('File available at', url);
+        // [START_EXCLUDE]
+        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+        document.getElementById('Image').innerHTML = 
+        // [END_EXCLUDE]
+      });
+      // [END oncomplete]
+    }
+    window.onload = function() {
+      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      document.getElementById('file').disabled = true;
+      // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+      auth.signInAnonymously().then(function(user) {
+        console.log('Anonymous Sign In Success', user);
+        document.getElementById('file').disabled = false;
+      }).catch(function(error) {
+        console.error('Anonymous Sign In Error', error);
+      });
+    }
   </script>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -146,15 +198,25 @@
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
+            <!--Profile picture display and edit-->
+            <img id="account-picture" src=""/>
+            <!--Email display and edit-->
             <p id="account-email">null</p>
             <button onClick="popupformEmail()" id="emailEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
             <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
-            
+            <!--Name display and edit-->
             <p id="account-name">null</p>
             <button onClick="popupformName()" id="nameEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
             <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
+            
+            
+            <h6>Choose File</h6>
+            <input type="file" id="file" name="file"/>
+            <h6>File URL:</h6>
+            <span id="linkbox"></span>
+            <span id="image"></span>
           </div>
           </div>
         </main>
