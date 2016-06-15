@@ -46,6 +46,16 @@
       document.getElementById('emailSubmit').style.visibility = 'visible';
       document.getElementById('emailEditbtn').style.visibility = 'hidden';
     }
+    function emailSubmit() {
+      var email = document.getElementById('emailChange').value;
+      var user = firebase.auth().currentUser;
+
+      user.updateEmail(email).then(function() {
+        // Update successful.
+      }, function(error) {
+        // An error happened.
+      });
+    }
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
