@@ -51,6 +51,11 @@
       document.getElementById('nameSubmit').style.visibility = 'visible';
       document.getElementById('nameEditbtn').style.visibility = 'hidden';
     }
+    function popupformPicture() {
+      document.getElementById('pictureChange').style.visibility = 'visible';
+      document.getElementById('pictureSubmit').style.visibility = 'visible';
+      document.getElementById('pictureEditbtn').style.visibility = 'hidden';
+    }
     function emailSubmitt() {
       var email = document.getElementById('emailChange').value;
       var user = firebase.auth().currentUser;
@@ -72,12 +77,12 @@
         // An error happened.
       });
     }
-    function accountImageChange() {
+    function pictureSubmitt() {
       var image = document.getElementById('account-picture');
       if (image.src.match("silhouette")) {
-        image.src = url;
+        image.src = image;
       } else {
-        image.src = "";
+        image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
       }
     }
     function initApp() {
@@ -112,41 +117,6 @@
         }
       });
     }
-    
-    
-    
-    
-    
-    
-    var auth = firebase.auth();
-    var storageRef = firebase.storage().ref();
-    function handleFileSelect(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
-      var file = evt.target.files[0];
-      var metadata = {
-        'contentType': file.type
-      };
-      // Push to child path.
-      var uploadTask = storageRef.child('images').put(file, metadata);
-      // Listen for errors and completion of the upload.
-      // [START oncomplete]
-      uploadTask.on('state_changed', null, function(error) {
-        // [START onfailure]
-        console.error('Upload failed:', error);
-        // [END onfailure]
-      }, function() {
-        console.log('Uploaded',uploadTask.snapshot.totalBytes,'bytes.');
-        console.log(uploadTask.snapshot.metadata);
-        var url = uploadTask.snapshot.metadata.downloadURLs[0];
-        console.log('File available at', url);
-        // [START_EXCLUDE]
-        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
-        document.getElementById('Image').innerHTML = 
-        // [END_EXCLUDE]
-      });
-      // [END oncomplete]
-    }
     window.onload = function() {
       document.getElementById('emailChange').style.visibility = 'hidden';
       document.getElementById('emailSubmit').style.visibility = 'hidden';
@@ -155,15 +125,6 @@
       document.getElementById('nameSubmit').style.visibility = 'hidden';
       document.getElementById('nameEditbtn').style.visibility = 'visible';
       initApp();
-      document.getElementById('file').addEventListener('change', handleFileSelect, false);
-      document.getElementById('file').disabled = true;
-      /* Sign the user in anonymously since accessing Storage requires the user to be authorized.
-      auth.signInAnonymously().then(function(user) {
-        console.log('Anonymous Sign In Success', user);
-        document.getElementById('file').disabled = false;
-      }).catch(function(error) {
-        console.error('Anonymous Sign In Error', error);
-      });*/
     }
   </script>
 <body>
@@ -200,6 +161,9 @@
             <pre><code id="quickstart-account-details">null</code></pre>
             <!--Profile picture display and edit-->
             <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/>
+            <button onClick="popupformPicture()" id="pictureEditbtn">Edit</button>
+            <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
+            <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
             <!--Email display and edit-->
             <p id="account-email">null</p>
             <button onClick="popupformEmail()" id="emailEditbtn">Edit</button>
@@ -210,13 +174,6 @@
             <button onClick="popupformName()" id="nameEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
             <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
-            
-            
-            <h6>Choose File</h6>
-            <input type="file" id="file" name="file"/>
-            <h6>File URL:</h6>
-            <span id="linkbox"></span>
-            <span id="image"></span>
           </div>
           </div>
         </main>
