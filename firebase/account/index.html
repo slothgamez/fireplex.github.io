@@ -43,7 +43,7 @@
   <script type="text/javascript">
     function editEmail() {
       var emailtoEdit = prompt("Please enter your new email.", "Email address");
-      
+      var user = firebase.auth().currentUser;
       if (emailtoEdit != null) {
         user.updateEmail(emailtoEdit).then(function() {
           //update successful
