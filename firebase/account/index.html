@@ -41,6 +41,17 @@
 </head>
 
   <script type="text/javascript">
+    function editEmail() {
+      var emailtoEdit = prompt("Please enter your new email.", "Email address");
+      
+      if (emailtoEdit != null) {
+        user.updateEmail(emailtoEdit).then(function() {
+          //update successful
+        }, function(error) {
+          //an error happened
+        }
+        });
+    }
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -108,7 +119,8 @@
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
-            <p id="account-email">poop</p>
+            <p id="account-email">null</p>
+            <button onClick="editEmail()">Edit</button>
           </div>
           </div>
         </main>
