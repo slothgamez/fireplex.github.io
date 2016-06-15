@@ -116,6 +116,8 @@
           var providerData = user.providerData;
           document.getElementById('account-email').innerHTML = "Email: " + email;
           document.getElementById('account-name').innerHTML = "Display Name: " + displayName;
+          var image = document.getElementById('account-picture');
+          image.src = photoURL;
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -142,8 +144,6 @@
       document.getElementById('pictureChange').style.visibility = 'hidden';
       document.getElementById('pictureSubmit').style.visibility = 'hidden';
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
-      var image = document.getElementById('account-picture');
-      image.src = photoURL;
       initApp();
     }
   </script>
