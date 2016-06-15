@@ -43,6 +43,7 @@
   <script type="text/javascript">
     function popupform () {
       document.getElementById('emailChange').style.visibility = 'visible';
+      document.getElementById('emailEditbtn').style.visibility = 'hidden';
     }
     function initApp() {
       // Listening for auth state changes.
@@ -77,6 +78,7 @@
     }
     window.onload = function() {
       document.getElementById('emailChange').style.visibility = 'hidden';
+      document.getElementById('emailEditbtn').style.visibility = 'visible';
       initApp();
     };
   </script>
@@ -113,7 +115,7 @@
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
             <p id="account-email">null</p>
-            <button onClick="popupform()">Edit</button>
+            <button onClick="popupform()" id="emailEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
           </div>
           </div>
