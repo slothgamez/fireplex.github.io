@@ -72,8 +72,10 @@
       user.updateProfile({
         displayName: name
       }).then(function() {
+        alert("Name changed succesfully")
         // Update successful.
       }, function(error) {
+        alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
     }
@@ -126,6 +128,9 @@
       document.getElementById('nameChange').style.visibility = 'hidden';
       document.getElementById('nameSubmit').style.visibility = 'hidden';
       document.getElementById('nameEditbtn').style.visibility = 'visible';
+      document.getElementById('pictureChange').style.visibility = 'hidden';
+      document.getElementById('pictureSubmit').style.visibility = 'hidden';
+      document.getElementById('pictureEditbtn').style.visibility = 'visible';
       initApp();
     }
   </script>
@@ -166,7 +171,6 @@
             <button onClick="popupformPicture()" id="pictureEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
             <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
-            <p id="picture-url">NULL</p>
             <!--Email display and edit-->
             <p id="account-email">null</p>
             <button onClick="popupformEmail()" id="emailEditbtn">Edit</button>
