@@ -62,7 +62,15 @@
       });
     }
     function nameSubmitt() {
-      var nane = document.getElementById('nameChange').value;
+      var name = document.getElementById('nameChange').value;
+      var user = firebase.auth().currentUser;
+      user.updateProfile({
+        displayName: name;
+      }).then(function() {
+        // Update successful.
+      }, function(error) {
+        // An error happened.
+      });
     }
     function initApp() {
       // Listening for auth state changes.
