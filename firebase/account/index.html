@@ -41,16 +41,11 @@
 </head>
 
   <script type="text/javascript">
-    function editEmail() {
-      var emailtoEdit = prompt("Please enter your new email.", "Email address");
-      var user = firebase.auth().currentUser;
-      if (emailtoEdit != null) {
-        user.updateEmail(emailtoEdit).then(function() {
-          //update successful
-        }, function(error) {
-          //an error happened
-        });
-        }
+    function popupform (myform, windowname) {
+      if (! window.focus)return true;
+      window.open('', windowname, 'height=200,width=400,scrollbars=yes');
+      myform.target=windowname;
+      return true;
     }
     function initApp() {
       // Listening for auth state changes.
@@ -121,6 +116,9 @@
             <pre><code id="quickstart-account-details">null</code></pre>
             <p id="account-email">null</p>
             <button onClick="editEmail()">Edit</button>
+            <FORM METHOD=POST
+              ACTION="../cgi-bin/mypopupcgi.pl"
+              onSubmit="popupform(this, 'join')">
           </div>
           </div>
         </main>
