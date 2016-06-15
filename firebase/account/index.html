@@ -41,20 +41,29 @@
 </head>
 
   <script type="text/javascript">
-    function popupform () {
+    function popupformEmail () {
       document.getElementById('emailChange').style.visibility = 'visible';
       document.getElementById('emailSubmit').style.visibility = 'visible';
       document.getElementById('emailEditbtn').style.visibility = 'hidden';
     }
+    function popupformName () {
+      document.getElementById('nameChange').style.visibility = 'visible';
+      document.getElementById('nameSubmit').style.visibility = 'visible';
+      document.getElementById('nameEditbtn').style.visibility = 'hidden';
+    }
     function emailSubmitt() {
       var email = document.getElementById('emailChange').value;
       var user = firebase.auth().currentUser;
+    }
 
       user.updateEmail(email).then(function() {
         // Update successful.
       }, function(error) {
         // An error happened.
       });
+    }
+    function nameSubmitt() {
+      var nane = document.getElementById('nameChange').value;
     }
     function initApp() {
       // Listening for auth state changes.
@@ -71,6 +80,7 @@
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           document.getElementById('account-email').innerHTML = "Email: " + email;
+          document.getElementById('account-name').innerHTML = "Display Name: " + displayName;
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -130,6 +140,11 @@
             <button onClick="popupform()" id="emailEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
             <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
+            
+            <p id="account-namee">null</p>
+            <button onClick="popupformName()" id="nameEditbtn">Edit</button>
+            <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameSubmit" placeholder="New name"/>
+            <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
           </div>
           </div>
         </main>
