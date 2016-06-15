@@ -41,7 +41,7 @@
 </head>
 
   <script type="text/javascript">
-    function popupformEmail () {
+    function popupformEmail() {
       document.getElementById('emailChange').style.visibility = 'visible';
       document.getElementById('emailSubmit').style.visibility = 'visible';
       document.getElementById('emailEditbtn').style.visibility = 'hidden';
@@ -136,7 +136,7 @@
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
             <p id="account-email">null</p>
-            <button onClick="popupform()" id="emailEditbtn">Edit</button>
+            <button onClick="popupformEmail()" id="emailEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
             <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
             
