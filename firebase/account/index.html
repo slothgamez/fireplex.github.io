@@ -43,6 +43,7 @@
   <script type="text/javascript">
     function popupform () {
       document.getElementById('emailChange').style.visibility = 'visible';
+      document.getElementById('emailSubmit').style.visibility = 'visible';
       document.getElementById('emailEditbtn').style.visibility = 'hidden';
     }
     function initApp() {
@@ -78,6 +79,7 @@
     }
     window.onload = function() {
       document.getElementById('emailChange').style.visibility = 'hidden';
+      document.getElementById('emailSubmit').style.visibility = 'hidden';
       document.getElementById('emailEditbtn').style.visibility = 'visible';
       initApp();
     };
@@ -117,6 +119,7 @@
             <p id="account-email">null</p>
             <button onClick="popupform()" id="emailEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
+            <button onClick="emailSubmit()" id="emailSubmit">Submit changes</button>
           </div>
           </div>
         </main>
