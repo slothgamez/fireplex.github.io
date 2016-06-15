@@ -75,7 +75,9 @@
     function accountImageChange() {
       var image = document.getElementById('account-picture');
       if (image.src.match("silhouette")) {
-        image.src = 
+        image.src = url;
+      } else {
+        image.src = "";
       }
     }
     function initApp() {
