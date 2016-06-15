@@ -65,7 +65,7 @@
       var name = document.getElementById('nameChange').value;
       var user = firebase.auth().currentUser;
       user.updateProfile({
-        displayName: name;
+        displayName: name
       }).then(function() {
         // Update successful.
       }, function(error) {
