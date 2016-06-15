@@ -79,8 +79,9 @@
     }
     function pictureSubmitt() {
       var image = document.getElementById('account-picture');
+      var picture = document.getElementById('imageChange');
       if (image.src.match("silhouette")) {
-        image.src = image;
+        image.src = picture;
       } else {
         image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
       }
