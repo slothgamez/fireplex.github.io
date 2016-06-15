@@ -112,24 +112,6 @@
         }
       });
     }
-    window.onload = function() {
-      document.getElementById('emailChange').style.visibility = 'hidden';
-      document.getElementById('emailSubmit').style.visibility = 'hidden';
-      document.getElementById('emailEditbtn').style.visibility = 'visible';
-      document.getElementById('nameChange').style.visibility = 'hidden';
-      document.getElementById('nameSubmit').style.visibility = 'hidden';
-      document.getElementById('nameEditbtn').style.visibility = 'visible';
-      initApp();
-      document.getElementById('file').addEventListener('change', handleFileSelect, false);
-      document.getElementById('file').disabled = true;
-      // Sign the user in anonymously since accessing Storage requires the user to be authorized.
-      auth.signInAnonymously().then(function(user) {
-        console.log('Anonymous Sign In Success', user);
-        document.getElementById('file').disabled = false;
-      }).catch(function(error) {
-        console.error('Anonymous Sign In Error', error);
-      })
-    };
     
     
     
@@ -165,6 +147,24 @@
       });
       // [END oncomplete]
     }
+    window.onload = function() {
+      document.getElementById('emailChange').style.visibility = 'hidden';
+      document.getElementById('emailSubmit').style.visibility = 'hidden';
+      document.getElementById('emailEditbtn').style.visibility = 'visible';
+      document.getElementById('nameChange').style.visibility = 'hidden';
+      document.getElementById('nameSubmit').style.visibility = 'hidden';
+      document.getElementById('nameEditbtn').style.visibility = 'visible';
+      initApp();
+      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      document.getElementById('file').disabled = true;
+      // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+      auth.signInAnonymously().then(function(user) {
+        console.log('Anonymous Sign In Success', user);
+        document.getElementById('file').disabled = false;
+      }).catch(function(error) {
+        console.error('Anonymous Sign In Error', error);
+      })
+    };
   </script>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
