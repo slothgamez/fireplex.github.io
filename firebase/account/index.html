@@ -80,6 +80,7 @@
     function pictureSubmitt() {
       var image = document.getElementById('account-picture');
       var picture = document.getElementById('imageChange').value;
+      document.getElementById('picture-url').innerHTML = picture;
       if (image.src.match("silhouette")) {
         image.src = picture;
       } else {
@@ -165,6 +166,7 @@
             <button onClick="popupformPicture()" id="pictureEditbtn">Edit</button>
             <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
             <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
+            <p id="picture-url">NULL</p>
             <!--Email display and edit-->
             <p id="account-email">null</p>
             <button onClick="popupformEmail()" id="emailEditbtn">Edit</button>
