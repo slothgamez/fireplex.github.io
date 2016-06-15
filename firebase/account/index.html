@@ -61,8 +61,10 @@
       var user = firebase.auth().currentUser;
 
       user.updateEmail(email).then(function() {
+        alert("Email changed succesfully")
         // Update successful.
       }, function(error) {
+        alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
     }
@@ -88,6 +90,16 @@
       } else {
         image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
       }
+      var user = firebase.auth().currentUser;
+      user.updateProfile({
+        photoURL: picture
+      }).then(function() {
+        alert("Account picture changed succesfully")
+        // Update successful.
+      }, function(error) {
+        alert("An error occurred. Please contact the webmaster.")
+        // An error happened.
+      });
     }
     function initApp() {
       // Listening for auth state changes.
