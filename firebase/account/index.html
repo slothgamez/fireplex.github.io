@@ -79,7 +79,7 @@
     }
     function pictureSubmitt() {
       var image = document.getElementById('account-picture');
-      var picture = document.getElementById('imageChange');
+      var picture = document.getElementById('imageChange').value;
       if (image.src.match("silhouette")) {
         image.src = picture;
       } else {
