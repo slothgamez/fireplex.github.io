@@ -41,11 +41,8 @@
 </head>
 
   <script type="text/javascript">
-    function popupform (myform, windowname) {
-      if (! window.focus)return true;
-      window.open('', windowname, 'height=200,width=400,scrollbars=yes');
-      myform.target=windowname;
-      return true;
+    function popupform () {
+      document.getElementById('emailChange').style.visibility = 'visible';
     }
     function initApp() {
       // Listening for auth state changes.
@@ -79,6 +76,7 @@
       });
     }
     window.onload = function() {
+      document.getElementById('emailChange').style.visibility = 'hidden';
       initApp();
     };
   </script>
@@ -116,9 +114,7 @@
             <pre><code id="quickstart-account-details">null</code></pre>
             <p id="account-email">null</p>
             <button onClick="popupform()">Edit</button>
-            <FORM METHOD=POST
-              ACTION="../cgi-bin/mypopupcgi.pl"
-              onSubmit="popupform(this, 'join')">
+            <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
           </div>
           </div>
         </main>
