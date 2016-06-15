@@ -54,7 +54,6 @@
     function emailSubmitt() {
       var email = document.getElementById('emailChange').value;
       var user = firebase.auth().currentUser;
-    }
 
       user.updateEmail(email).then(function() {
         // Update successful.
