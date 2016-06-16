@@ -282,8 +282,9 @@ function writeUserData(userId, name, email) {
 window.addEventListener('load', function() {
   // Bind Sign in button.
   signInButton.addEventListener('click', function() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    //var provider = new firebase.auth.GoogleAuthProvider();
+    //firebase.auth().signInWithPopup(provider);
+    window.location.href = "http://fireplex.github.io";
   });
 
   // Listen for auth state changes
