@@ -284,7 +284,8 @@ window.addEventListener('load', function() {
   signInButton.addEventListener('click', function() {
     //var provider = new firebase.auth.GoogleAuthProvider();
     //firebase.auth().signInWithPopup(provider);
-    window.location.href = "http://fireplex.github.io";
+    alert("redirecting to login page")
+    window.location.href = "http://fireplex.github.io/firebase/login";
   });
 
   // Listen for auth state changes
