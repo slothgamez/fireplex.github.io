@@ -66,6 +66,8 @@
         document.getElementById('emailSubmit').style.visibility = 'hidden';
         // Update successful.
       }, function(error) {
+        document.getElementById('emailChange').style.visibility = 'hidden';
+        document.getElementById('emailSubmit').style.visibility = 'hidden';
         alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
@@ -81,6 +83,8 @@
         document.getElementById('nameSubmit').style.visibility = 'hidden';
         // Update successful.
       }, function(error) {
+        document.getElementById('nameChange').style.visibility = 'hidden';
+        document.getElementById('nameSubmit').style.visibility = 'hidden';
         alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
@@ -94,6 +98,8 @@
         document.getElementById('pictureSubmit').style.visibility = 'hidden';
       } else {
         image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
+        document.getElementById('pictureChange').style.visibility = 'hidden';
+        document.getElementById('pictureSubmit').style.visibility = 'hidden';
       }
       var user = firebase.auth().currentUser;
       user.updateProfile({
