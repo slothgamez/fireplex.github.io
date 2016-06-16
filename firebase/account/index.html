@@ -64,12 +64,12 @@
         alert("Email changed succesfully")
         document.getElementById('emailChange').style.visibility = 'hidden';
         document.getElementById('emailSubmit').style.visibility = 'hidden';
-        document.getElementById('emailEditbtn').style.visibility = 'hidden';
+        document.getElementById('emailEditbtn').style.visibility = 'visible';
         // Update successful.
       }, function(error) {
         document.getElementById('emailChange').style.visibility = 'hidden';
         document.getElementById('emailSubmit').style.visibility = 'hidden';
-        document.getElementById('emailEditbtn').style.visibility = 'hidden';
+        document.getElementById('emailEditbtn').style.visibility = 'visible';
         alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
@@ -83,12 +83,12 @@
         alert("Name changed succesfully")
         document.getElementById('nameChange').style.visibility = 'hidden';
         document.getElementById('nameSubmit').style.visibility = 'hidden';
-        document.getElementById('nameEditbtn').style.visibility = 'hidden';
+        document.getElementById('nameEditbtn').style.visibility = 'visible';
         // Update successful.
       }, function(error) {
         document.getElementById('nameChange').style.visibility = 'hidden';
         document.getElementById('nameSubmit').style.visibility = 'hidden';
-        document.getElementById('nameEditbtn').style.visibility = 'hidden';
+        document.getElementById('nameEditbtn').style.visibility = 'visible';
         alert("An error occurred. Please contact the webmaster.")
         // An error happened.
       });
@@ -100,12 +100,12 @@
         image.src = picture;
         document.getElementById('pictureChange').style.visibility = 'hidden';
         document.getElementById('pictureSubmit').style.visibility = 'hidden';
-        document.getElementById('pictureEditbtn').style.visibility = 'hidden';
+        document.getElementById('pictureEditbtn').style.visibility = 'visible';
       } else {
         image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
         document.getElementById('pictureChange').style.visibility = 'hidden';
         document.getElementById('pictureSubmit').style.visibility = 'hidden';
-        document.getElementById('pictureEditbtn').style.visibility = 'hidden';
+        document.getElementById('pictureEditbtn').style.visibility = 'visible';
       }
       var user = firebase.auth().currentUser;
       user.updateProfile({
