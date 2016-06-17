@@ -157,6 +157,7 @@
           var image = document.getElementById('account-picture');
           image.src = photoURL;
           splashPage.style.display = 'none';
+          alert("splash page hidden");
           /*document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -185,7 +186,7 @@
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
       initApp();
       var splashPage = document.getElementById('page-splash');
-      splashPage.style.display = 'none';
+      splashPage.style.display = 'block';
     }
   </script>
 <body>
