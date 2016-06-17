@@ -77,21 +77,25 @@
     function nameSubmitt() {
       var name = document.getElementById('nameChange').value;
       var user = firebase.auth().currentUser;
-      user.updateProfile({
-        displayName: name
-      }).then(function() {
-        alert("Name changed succesfully")
-        document.getElementById('nameChange').style.visibility = 'hidden';
-        document.getElementById('nameSubmit').style.visibility = 'hidden';
-        document.getElementById('nameEditbtn').style.visibility = 'visible';
-        // Update successful.
-      }, function(error) {
-        document.getElementById('nameChange').style.visibility = 'hidden';
-        document.getElementById('nameSubmit').style.visibility = 'hidden';
-        document.getElementById('nameEditbtn').style.visibility = 'visible';
-        alert("An error occurred. Please contact the webmaster.")
-        // An error happened.
-      });
+      if (name.length < 4) {
+        alert("Please enter a name");
+      } else {
+        user.updateProfile({
+          displayName: name
+        }).then(function() {
+          alert("Name changed succesfully")
+          document.getElementById('nameChange').style.visibility = 'hidden';
+          document.getElementById('nameSubmit').style.visibility = 'hidden';
+          document.getElementById('nameEditbtn').style.visibility = 'visible';
+          // Update successful.
+        }, function(error) {
+          document.getElementById('nameChange').style.visibility = 'hidden';
+          document.getElementById('nameSubmit').style.visibility = 'hidden';
+          document.getElementById('nameEditbtn').style.visibility = 'visible';
+          alert("An error occurred. Please contact the webmaster.")
+          // An error happened.
+        });
+      }
     }
     function pictureSubmitt() {
       var image = document.getElementById('account-picture');
