@@ -156,7 +156,7 @@
           document.getElementById('account-name').innerHTML = "Display Name: " + displayName;
           var image = document.getElementById('account-picture');
           image.src = photoURL;
-          splashPage.style.visibility = 'hidden';
+          splashPage.style.display = 'none';
           /*document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -185,7 +185,7 @@
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
       initApp();
       var splashPage = document.getElementById('page-splash');
-      splashPage.style.visibility = 'hidden';
+      splashPage.style.display = 'none';
     }
   </script>
 <body>
