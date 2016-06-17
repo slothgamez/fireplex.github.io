@@ -172,6 +172,12 @@
         } else {
           document.getElementById('quickstart-account-details').textContent = 'null';
         }
+        signInButton.addEventListener('click', function() {
+          //var provider = new firebase.auth.GoogleAuthProvider();
+          //firebase.auth().signInWithPopup(provider);
+          alert("redirecting to login page")
+          window.location.href = "http://fireplex.github.io/firebase/login";
+        });
       });
     }
     window.onload = function() {
