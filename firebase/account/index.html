@@ -156,6 +156,7 @@
           document.getElementById('account-name').innerHTML = "Display Name: " + displayName;
           var image = document.getElementById('account-picture');
           image.src = photoURL;
+          splashPage.style.display = 'none';
           /*document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -172,15 +173,6 @@
         }
       });
     }
-    window.addEventListener(function() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          splashPage.style.display = 'none';
-        } else {
-          splashPage.style.display = 'block';
-        }
-      });
-    });
     window.onload = function() {
       document.getElementById('emailChange').style.visibility = 'hidden';
       document.getElementById('emailSubmit').style.visibility = 'hidden';
@@ -193,6 +185,7 @@
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
       initApp();
       var splashPage = document.getElementById('page-splash');
+      splashPage.style.display = 'block';
     }
   </script>
 <body>
