@@ -218,10 +218,12 @@
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>-->
             <!--Profile picture display and edit-->
-            <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/>
-            <button onClick="popupformPicture()" id="pictureEditbtn">Edit</button>
-            <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
-            <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
+            <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="picturediv">
+              <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/>
+              <button onClick="popupformPicture()" id="pictureEditbtn">Edit</button>
+              <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
+              <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
+            </div>
             <!--Email display and edit-->
             <br/><br/>
             <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="emaildiv">
@@ -232,10 +234,12 @@
             </div>
             <!--Name display and edit-->
             <br/><br/>
-            <span id="account-name">null</span>
-            <button onClick="popupformName()" id="nameEditbtn">Edit</button>
-            <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
-            <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
+            <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="namediv">
+              <span id="account-name">null</span>
+              <button onClick="popupformName()" id="nameEditbtn">Edit</button>
+              <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
+              <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
+            </div>
             <!--Delete user account-->
             <br/><br/>
             <button onClick="deleteUserAcc()" id="deleteUserbtn" style="background-color:red" class="mdl-button mdl-js-button mdl-button--raised">Delete account</button>
