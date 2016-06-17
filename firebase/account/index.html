@@ -172,7 +172,7 @@
         }
       });
     }
-    window.addEventListener('load', function() {
+    window.addEventListener(function() {
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           splashPage.style.display = 'none';
