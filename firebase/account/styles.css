@@ -5,4 +5,23 @@
   -moz-border-radius: 25px;
   border-radius: 3px;
   box-shadow: 1px 1px 5px #888888;
+  background: lightgrey;
+}
+#namediv {
+  width: 585px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #888888;
+  background: lightgrey;
+}
+#picturediv {
+  width: 585px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #888888;
+  background: lightgrey;  
 }
