@@ -172,6 +172,15 @@
         }
       });
     }
+    window.addEventListener('load', function() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          splashPage.style.display = 'none';
+        } else {
+          splashPage.style.display = 'block';
+        }
+      });
+    });
     window.onload = function() {
       document.getElementById('emailChange').style.visibility = 'hidden';
       document.getElementById('emailSubmit').style.visibility = 'hidden';
@@ -182,6 +191,7 @@
       document.getElementById('pictureChange').style.visibility = 'hidden';
       document.getElementById('pictureSubmit').style.visibility = 'hidden';
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
+      var splashPage = document.getElementById('page-splash');
       initApp();
     }
   </script>
