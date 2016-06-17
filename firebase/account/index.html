@@ -175,6 +175,8 @@
       });
     }
     window.onload = function() {
+      var splashPage = document.getElementById('page-splash');
+      alert("Splash var assigned");
       document.getElementById('emailChange').style.visibility = 'hidden';
       document.getElementById('emailSubmit').style.visibility = 'hidden';
       document.getElementById('emailEditbtn').style.visibility = 'visible';
@@ -185,7 +187,6 @@
       document.getElementById('pictureSubmit').style.visibility = 'hidden';
       document.getElementById('pictureEditbtn').style.visibility = 'visible';
       initApp();
-      var splashPage = document.getElementById('page-splash');
       splashPage.style.display = 'block';
     }
   </script>
