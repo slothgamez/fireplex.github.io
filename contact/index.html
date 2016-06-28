@@ -42,52 +42,7 @@
 </head>
 
 <script type="text/javascript">
-  [HttpPost]
-    public ActionResult Login(User user, bool RememberMe)
-    {
-        var response = HttpContext.Request.Form["g-recaptcha-response"];
-        string secretKey = "6Lc00B4TAAAAACrlt27-wY-jg-BDmmrLEqbxfTt_";
-        var client = new WebClient();
-        // get captcha verification result
-        var verificationResultJson = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
-        // convert json to object
-        var verificationResult = JsonConvert.DeserializeObject<CaptchaVerificationResult>(verificationResultJson);
-        // process verification result
-        if (!verificationResult.Success)
-        {
-            if (verificationResult.ErrorCodes.Count <= 0)
-            {
-                return View(user);
-            }
-            var error = verificationResult.ErrorCodes[0].ToLower();
-            switch (error)
-            {
-                case ("missing-input-secret"):
-                    ViewBag.CaptchaMessage = "The secret parameter is missing.";
-                    break;
-                case ("invalid-input-secret"):
-                    ViewBag.CaptchaMessage = "The secret parameter is invalid or malformed.";
-                    break;
-
-                case ("missing-input-response"):
-                    ViewBag.CaptchaMessage = "The captcha input is missing.";
-                    break;
-                case ("invalid-input-response"):
-                    ViewBag.CaptchaMessage = "The captcha input is invalid or malformed.";
-                    break;
-
-                default:
-                    ViewBag.CaptchaMessage = "Error occured. Please try again";
-                    break;
-            }
-            return View(user);
-        }
-        else
-        {
-            // proceed form submission
-			...
-        }
-    }
+//Javascript here
 </script>
 
 <body>
