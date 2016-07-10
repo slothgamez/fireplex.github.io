@@ -238,28 +238,22 @@
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>-->
             <!--Profile picture display and edit-->
-            <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="picturediv">
               <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/ height="50" width="50">
               <div id="picbtn"><button onClick="popupformPicture()" id="pictureEditbtn">&nbsp;&nbsp;Edit</button></div>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
               <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
-            </div>
             <!--Email display and edit-->
             <br/><br/>
-            <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="emaildiv">
               <span id="account-email" style="display:inline">null</span>
               <div id="emailbtn"><button onClick="popupformEmail()" id="emailEditbtn">&nbsp;&nbsp;Edit</button></div>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
               <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
-            </div>
             <!--Name display and edit-->
             <br/><br/>
-            <div class="mdl-card__title mdl-color-text--white mdl-shadow-6dp" id="namediv">
               <span id="account-name">null</span>
               <div id="namebtn"><button onClick="popupformName()" id="nameEditbtn">&nbsp;&nbsp;Edit</button></div>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
               <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
-            </div>
             <!--Delete user account-->
             <br/><br/>
             	<button onClick="deleteUserAcc()" id="deleteUserbtn" style="background-color:red" class="mdl-button mdl-js-button mdl-button--raised">Delete account</button>
