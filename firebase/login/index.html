@@ -129,23 +129,12 @@
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          /*document.getElementById('quickstart-account-details').textContent = JSON.stringify({
-            displayName: displayName,
-            email: email,
-            emailVerified: emailVerified,
-            photoURL: photoURL,
-            isAnonymous: isAnonymous,
-            uid: uid,
-            refreshToken: refreshToken,
-            providerData: providerData
-          }, null, '  ');*/
           // [END_EXCLUDE]
         } else {
           // User is signed out.
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          //document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
@@ -204,9 +193,7 @@
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
-            Sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <!--<div>Firebase auth <code>currentUser</code> object value:</div>
-            <pre><code id="quickstart-account-details">null</code></pre>-->
+            <br />Sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
           </div>
           </div>
         </main>
