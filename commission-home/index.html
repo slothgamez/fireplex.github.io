@@ -49,6 +49,8 @@
       var continueButton = document.getElementById('warning-continue');
       var consentCookie = document.cookie;
       if (consentCookie == "contentEnabled") {
+        splashWarning.style.display = 'none';
+      } else {
         splashWarning.style.display = 'block';
       }
       
