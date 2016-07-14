@@ -61,8 +61,11 @@
       });
     }
     function exitPage() {
-      alert("Exiting...");
-      window.location.href = "http://fireplex.github.io";
+      var exitButton = document.getElementById('warning-exit');
+      exitButton.addEventListener('click', function() {
+        alert("Exiting...");
+        window.location.href = "http://fireplex.github.io";
+      }
     }
     function initApp() {
       // Listening for auth state changes.
@@ -73,6 +76,7 @@
           var splashPage = document.getElementById('page-splash');
           cookies();
           splashPage.style.display = 'none';
+          exitPage();
         }
         var signInButton = document.getElementById('sign-in-button');
         signInButton.addEventListener('click', function() {
