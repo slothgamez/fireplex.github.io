@@ -53,6 +53,7 @@
           var splashPage = document.getElementById('page-splash');
           var splashWarning = document.getElementById('page-warning-splash');
           splashPage.style.display = 'none';
+          cookies();
           //if (warningConsent == "false") {
           //  splashWarning.style.display = 'block';
           //} else {
@@ -67,7 +68,7 @@
         });
       });
     }
-    function COOKIES() {
+    function cookies() {
       var continueButton = document.getElementById('warning-continue');
       continueButton.addEventListener('click', function() {
         document.cookie = "contentEnabled";
