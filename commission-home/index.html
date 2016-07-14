@@ -47,14 +47,14 @@
     function cookies() {
       var splashWarning = document.getElementById('page-warning-splash');
       var continueButton = document.getElementById('warning-continue');
-      continueButton.addEventListener('click', function() {
-        document.cookie = "contentEnabled";
-      });
-      
       var consentCookie = document.cookie;
       if (consentCookie == "contentEnabled") {
         splashWarning.style.display = 'block';
       }
+      
+      continueButton.addEventListener('click', function() {
+        document.cookie = "contentEnabled";
+      });
     }
     function initApp() {
       // Listening for auth state changes.
