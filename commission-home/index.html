@@ -48,14 +48,14 @@
       var splashWarning = document.getElementById('page-warning-splash');
       var continueButton = document.getElementById('warning-continue');
       var consentCookie = document.cookie;
-      if (consentCookie == "contentEnabled") {
+      if (consentCookie == "contentEnabled=true") {
         splashWarning.style.display = 'none';
       } else {
         splashWarning.style.display = 'block';
       }
       
       continueButton.addEventListener('click', function() {
-        document.cookie = "contentEnabled; expires=Mon, 31 Dec 2099 12:00:00 UTC";
+        document.cookie = "contentEnabled=true; expires=Mon, 31 Dec 2099 12:00:00 UTC; path=/";
         cookies();
       });
     }
