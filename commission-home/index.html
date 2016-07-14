@@ -26,6 +26,9 @@
   firebase.initializeApp(config);
 </script>
 
+<script type="text/javascript">
+  
+</script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,6 +52,7 @@
           // User is signed in.
           var splashPage = document.getElementById('page-splash');
           splashPage.style.display = 'none';
+          splashWarning.style.display = 'block';
         }
         var signInButton = document.getElementById('sign-in-button');
         signInButton.addEventListener('click', function() {
@@ -61,8 +65,10 @@
     }
     window.onload = function() {
       var splashPage = document.getElementById('page-splash');
+      var splashWarning = document.getElementById('page-warning-splash');
       initApp();
       splashPage.style.display = 'block';
+      splashWarning.style.display = 'none';
     }
   </script>
 <body>
@@ -74,8 +80,14 @@
         <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Go to login page</button>
       </div>
     </section>  
-      
     
+    <section id="page-warning-splash">
+      <h3 class="logo">Warning</h3>
+      <p>This page may contain content that others may find offensive (SFW furry art). If you do not wish to continue click "exit"
+       Otherwise if you always wish to gain access, select "continue".</p>
+      <button id="warning-continue" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">Continue</button>
+      <button id="warning-exit" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">Exit</button>
+    </section>
         <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
             <div class="mdl-layout__header-row portfolio-logo-row">
                 <span class="mdl-layout__title">
