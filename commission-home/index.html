@@ -62,8 +62,6 @@
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          document.getElementById('account-email').innerHTML = "Email: " + email;
-          document.getElementById('account-name').innerHTML = "Display Name: " + displayName;
           var splashPage = document.getElementById('page-splash');
           splashPage.style.display = 'none';
         }
