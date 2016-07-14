@@ -66,15 +66,18 @@
           alert("redirecting to login page")
           window.location.href = "http://fireplex.github.io/firebase/login";
         });
-        var continueButton = document.getElementById('warning-continue');
-        continueButton.addEventListener('click', function() {
-          document.cookie = "contentEnabled";
-        });
-        var consentCookie = document.cookie;
-        if (consentCookie == "contentEnabled") {
-          warningConsent = true;
-        }
       });
+    }
+    function COOKIES() {
+      var continueButton = document.getElementById('warning-continue');
+      continueButton.addEventListener('click', function() {
+        document.cookie = "contentEnabled";
+      });
+      
+      var consentCookie = document.cookie;
+      if (consentCookie == "contentEnabled") {
+        warningConsent = true;
+      }
     }
     window.onload = function() {
       document.cookie = "contentDisabled";
