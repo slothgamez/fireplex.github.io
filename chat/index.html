@@ -113,27 +113,35 @@
         </div>
         <main class="mdl-layout__content">
         <!--Main content section-->
-          <script type='text/javascript'>
-            // Create a new Firebase reference, and a new instance of the Login client
-            var chatRef = new Firebase('https://project-3591775765881809294.firebaseio.com/chat');
-            chatRef.onAuth(function(authData) {
-              // Once authenticated, instantiate Firechat with our user id and user name
-              if (authData) {
-                var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
-                chat.setUser(authData.uid, authData[authData.provider].displayName);
+          <script>
+          // Create a new Firebase reference, and a new instance of the Login client
+          var chatRef = new Firebase('https://project-3591775765881809294.firebaseio.com/chat');
+          
+          function login() {
+            chatRef.authWithOAuthPopup("twitter", function(error, authData) {
+              if (error) {
+                console.log(error);
               }
             });
-            function login(provider) {
-              chatRef.authWithOAuthPopup(provider, function(error, authData) {
-                if (error) {
-                  console.log(error);
-                }
-              });
+          }
+          
+          chatRef.onAuth(function(authData) {
+            // Once authenticated, instantiate Firechat with our user id and user name
+            if (authData) {
+              initChat(authData);
             }
+          });
           </script>
-          <div id='firechat-wrapper'>
-            <a href='#' onclick='login("twitter");'>Login</a>
-          </div>
+          
+          <a href='#' onclick='login();'>Login with Twitter</a>
+          <script>
+          function initChat(authData) {
+            var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
+            chat.setUser(authData.uid, authData[authData.provider].displayName);
+          }
+          </script>
+          
+          <div id='firechat-wrapper'></div>
         <!--Main END-->
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer__middle-section">
