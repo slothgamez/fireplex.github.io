@@ -41,6 +41,12 @@
 </head>
 
   <script type="text/javascript">
+    function nsfw3show() {
+      var nsfw3show = document.getElementById('nsfw3show');
+      var nsfwdesc3 = document.getElementById('nsfwdesc3');
+      nsfw3show.style.display = 'none';
+      nsfwdesc3.style.display = 'block';
+    }
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
@@ -63,6 +69,8 @@
       var splashPage = document.getElementById('page-splash');
       initApp();
       splashPage.style.display = 'block';
+      nsfw3show.style.display = 'block';
+      nsfwdesc3.style.display = 'none';
     }
   </script>
 <body>
@@ -130,7 +138,7 @@
               <th class="tg-031e">Khaiyote</th>
               <th class="tg-031e">Full scene, w/ background</th>
               <th class="tg-yw4l">A wolf, solid color body with darker toes and fingers, the headdress was something just for the pick, really other then hair, couple earrings and the nose stud, and a brown paw tattoo on her right shoulder</th>
-              <th class="tg-yw41">In the works</th>
+              <th class="tg-yw41">Complete!</th>
             </tr>
             <tr>
               <!-- Ref sheet: http://www.furaffinity.net/view/19852139/ -->
@@ -138,6 +146,14 @@
               <th class="tg-031e">Aur</th>
               <th class="tg-031e">Full scene, w/ background</th>
               <th class="tg-yw4l">No description</th>
+              <th class="tg-yw41">In the works</th>
+            </tr>
+            <tr>
+              <th class="tg-031e">3</th>
+              <th class="tg-031e">Havoc</th>
+              <th class="tg-031e">Full scene, w/ background</th>
+              <div id="nsfw3show"><button onClick="nsfw3show()" id="nsfw3showbtn">&nbsp;&nbsp;NSFW warning. Show content?</button></div>
+              <th class="tg-yw4l" id="nsfwdesc3">NSFW description warning</th>
               <th class="tg-yw41">Pending</th>
             </tr>
           </table>
