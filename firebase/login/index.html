@@ -121,11 +121,6 @@
           // User is signed in.
           user.sendEmailVerification();
 	  if (user.emailVerified) {
-	    console.log('Email is verified');
-	  }
-	  else {
-	    console.log('Email is not verified');
-	  }
           var displayName = user.displayName;
           var email = user.email;
           var emailVerified = user.emailVerified;
@@ -137,6 +132,9 @@
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+	  } else {
+	    alert('Your email is not verified! Go to your inbox and verify your account to sign in');
+	  }
           // [END_EXCLUDE]
         } else {
           // User is signed out.
