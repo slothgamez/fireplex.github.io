@@ -117,9 +117,9 @@
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
-	  user.sendEmailVerification();
         if (user) {
           // User is signed in.
+          user.sendEmailVerification();
 	  if (user.emailVerified) {
 	    console.log('Email is verified');
 	  }
