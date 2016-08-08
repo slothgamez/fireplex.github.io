@@ -119,7 +119,6 @@
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          user.sendEmailVerification();
 	  if (user.emailVerified) {
           var displayName = user.displayName;
           var email = user.email;
@@ -133,6 +132,7 @@
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
 	  } else {
+	    user.sendEmailVerification();
 	    alert('Your email is not verified! Go to your inbox and verify your account to sign in');
 	  }
           // [END_EXCLUDE]
