@@ -101,9 +101,9 @@
           console.error(error);
         }
         // [END_EXCLUDE]
+        firebase.auth().sendEmailVerification();
       });
       
-      firebase.auth().sendEmailVerification();
       // [END createwithemail]
     }
     /**
