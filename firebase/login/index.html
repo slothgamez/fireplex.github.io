@@ -91,7 +91,6 @@
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-      	user.sendEmailVerification();
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -118,6 +117,7 @@
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
+      	user.sendEmailVerification();
         if (user) {
           // User is signed in.
           var displayName = user.displayName;
