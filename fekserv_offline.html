@@ -1,5 +1,5 @@
 <!-- Feeka's server offline.html -->
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -15,5 +15,34 @@
 <body>
   <h1>Server offline</h1>
   <p>It appears that I'm offline right now so the server's not up! Sorry for any inconveniance.</p>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+  <script>
+    function checkOnline()
+  {
+    var img = document.createElement("img");
+      img.onload = function()
+      {
+          document.getElementById("status").value="online";
+      };
+      img.onerror = function()
+      {
+        document.getElementById("status").value="offline";
+      };
+    document.getElementById("status").style.display="block";
+    var ran = Math.random();
+      img.src = "http://i0006.photobucket.com/albums/0006/findstuff22/Best%20Images/Art%20best%20images/pen-and-ink1.jpg?v="+ran;
+  }
+  </script>
+</head>
+<body>
+  <input type="button" onclick="checkOnline()" value="check Online" />
+  <input type="text" placeholder="checking..." id="status" style="display:none;" />
 </body>
 </html>
