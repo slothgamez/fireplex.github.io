@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Server offline</title>
+  <title>Server possibly offline</title>
   <link href="https://fireplex.github.io/animate.css" type="text/css" rel="stylesheet" />
 </head>
   <link href="https://fireplex.github.io/animate.css" type="text/css" rel="stylesheet" />
@@ -24,14 +24,15 @@ function getParameterByName(name, url) {
 
 var originalQuote = getParameterByName('oq');
 
-function printQuery() {
+function queryRedirect() {
   var originalQuote = getParameterByName('oq');
-  alert(originalQuote);
+  var url = 'feeka.ddns.net' + originalQuote;
+  window.location.href = url;
 }
 </script>
 <body>
   <!--<h1>Server offline</h1>-->
   <p>The server may be down right now. You may continue to find out, however if it is offline it is because I am offline too</p>
-  <button onClick="printQuery()">Continue</button>
+  <button onClick="queryRedirect()">Continue</button>
 </body>
 </html>
