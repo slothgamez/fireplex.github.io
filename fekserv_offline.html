@@ -18,29 +18,16 @@
 </body>
 </html>-->
 
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset=utf-8 />
-<title>JS Bin</title>
-  <script>
-        $.ajax({
-            //your server url
-            url: "http://feeka.ddns.net",
-            type: "post",
-            data: "onlinecheck",
-            success: function(){
-                //function if server's online
-                document.getElementById("divtodiplaystatus").innerHTML = "Server is online!";
-            },
-            error:function(){
-                //function if server's offline
-                document.getElementById("divtodiplaystatus").innerHTML = "Server is offline :(!";
-            }
-        });
-  </script>
-</head>
-<body>
-  <div id="divtodiplaystatus"></div>
-</body>
+  <head>
+    <script type="text/javascript">
+      function reportError(xObj){
+        locationName = xObj.alt;
+        alert("Links on this page may not work since the server at " + locationName + " appears to be down!");
+      }
+    </script>
+  </head>
+  <body>
+    <img src="http://feeka.ddns.net/style/check_on.png" alt="http://feeka.ddns.net/style/check_off.png" style="width:0;height:0;visiblity:hidden;position:absolute;" onerror="reportError(this)">
+  </body>
 </html>
