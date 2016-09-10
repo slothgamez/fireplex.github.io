@@ -131,9 +131,9 @@
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           if (email == "toxicraptor98@gmail.com") {
-          	document.getElementById('admin-status').textContent = 'True';
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully. You also have admin priviliges!';
           } else {
-          	document.getElementById('admin-status').textContent = 'False';
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
 	  } else {
@@ -209,7 +209,6 @@
           <div class="quickstart-user-details-container">
             <br /><h5>Sign in status:</h5><span id="quickstart-sign-in-status">Unknown</span>
           </div>
-          	<br /><h5>Admin status:</h5><span id="admin-status">Unknown</span>
           </div>
         </main>
 	  <footer class="mdl-mega-footer">
