@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Link checker</title>
+  <meta name="description" content="Check if an url exists or not using AJAX">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <script>
+    var request = new XMLHttpRequest();  
+    request.open('GET', 'http://www.mozilla.org', true);
+    request.onreadystatechange = function(){
+        if (request.readyState === 4){
+            if (request.status === 404) {  
+                alert("Oh no, it does not exist!");
+            }  
+        }
+    };
+    request.send();
+  </script>
+</body>
+</html>
