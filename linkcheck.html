@@ -14,16 +14,11 @@
 
 <body>
   <script>
-    var request = new XMLHttpRequest();  
-    request.open('GET', 'https://www.mozilla.org', true);
-    request.onreadystatechange = function(){
-        if (request.readyState === 4){
-            if (request.status === 404) {  
-                alert("Oh no, it does not exist!");
-            }  
-        }
-    };
-    request.send();
+    $.get("http://www.google.com").done(function () {
+      alert("success");
+    }).fail(function () {
+       alert("failed.");
+    });
   </script>
 </body>
 </html>
