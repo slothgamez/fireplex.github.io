@@ -92,7 +92,7 @@
           document.getElementById('nameChange').style.visibility = 'hidden';
           document.getElementById('nameSubmit').style.visibility = 'hidden';
           document.getElementById('nameEditbtn').style.visibility = 'visible';
-          alert("An error occurred. Please contact the webmaster.")
+          alert("An error occurred. Please contact the webmaster. " + error)
           // An error happened.
         });
       }
@@ -131,7 +131,7 @@
           alert("Account deleted succesfully!");
           // User deleted.
         }, function(error) {
-          alert("An error occurred. Please contact the webmaster.")
+          alert("An error occurred. Please contact the webmaster. " + error)
           // An error happened.
         });
       } else {
