@@ -112,6 +112,9 @@
         document.getElementById('pictureEditbtn').style.visibility = 'visible';
       }
         var user = firebase.auth().currentUser;
+      if (url.length < 5) {
+         alert("The URL is not valid");
+      } else {
         user.updateProfile({
           photoURL: picture
         }).then(function() {
@@ -120,7 +123,7 @@
         }, function(error) {
           alert("An error occurred. Please contact the webmaster. " + error)
           // An error happened.
-        });
+        })};
     }
     function deleteUserAcc() {
       var confDel = confirm("Are you sure you wish to perform this action?")
