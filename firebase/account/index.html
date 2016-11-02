@@ -42,6 +42,12 @@
       #profile-picture-div {
         box-shadow:-1px 4px 5px #43ADB5;
       }
+      #email-div {
+        box-shadow:-1px 4px 5px #43ADB5;
+      }
+      #name-div {
+        box-shadow:-1px 4px 5px #43ADB5;
+      }
     </style>
 </head>
 
@@ -256,16 +262,20 @@
             </div>
             <!--Email display and edit-->
             <br/><br/>
+            <div id="email-div">
               <span id="account-email" style="display:inline"></span>
               <div id="emailbtn"><button onClick="popupformEmail()" id="emailEditbtn">&nbsp;&nbsp;Edit</button>
               </div><input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
               <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
+            </div>
             <!--Name display and edit-->
             <br/><br/>
+            <div id="name-div">
               <span id="account-name">null</span>
               <div id="namebtn"><button onClick="popupformName()" id="nameEditbtn">&nbsp;&nbsp;Edit</button></div>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
               <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
+            </div>
             <!--Delete user account-->
             <br/><br/>
             	<button onClick="deleteUserAcc()" id="deleteUserbtn" style="background-color:red" class="mdl-button mdl-js-button mdl-button--raised">Delete account</button>
