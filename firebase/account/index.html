@@ -38,6 +38,11 @@
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      #profile-picture-div {
+        box-shadow:-1px 4px 5px #43ADB5;
+      }
+    </style>
 </head>
 
   <script type="text/javascript">
@@ -243,10 +248,12 @@
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>-->
             <!--Profile picture display and edit-->
+            <div id="profile-picture-div">
               <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/ height="50" width="50">
               <span id="picbtn" style="display:inline"><button onClick="popupformPicture()" id="pictureEditbtn">&nbsp;&nbsp;Edit</button></span>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
               <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
+            </div>
             <!--Email display and edit-->
             <br/><br/>
               <span id="account-email" style="display:inline"></span>
