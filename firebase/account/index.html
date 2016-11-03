@@ -38,17 +38,6 @@
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-      #profile-picture-div {
-        /*box-shadow:-1px 4px 5px #43ADB5;*/
-      }
-      #email-div {
-        /*box-shadow:-1px 4px 5px #43ADB5;*/
-      }
-      #name-div {
-        /*box-shadow:-1px 4px 5px #43ADB5;*/
-      }
-    </style>
 </head>
 
   <script type="text/javascript">
@@ -261,7 +250,7 @@
               <button onCLick="pictureSubmitt()" id="pictureSubmit">Submit changes</button>
             </div>
             <!--Email display and edit-->
-            <br/><br/>
+            <hr>
             <div id="email-div">
               <span id="account-email" style="display:inline"></span>
               <div id="emailbtn"><button onClick="popupformEmail()" id="emailEditbtn">&nbsp;&nbsp;Edit</button>
@@ -269,7 +258,7 @@
               <button onClick="emailSubmitt()" id="emailSubmit">Submit changes</button>
             </div>
             <!--Name display and edit-->
-            <br/><br/>
+            <hr>
             <div id="name-div">
               <span id="account-name">null</span>
               <div id="namebtn"><button onClick="popupformName()" id="nameEditbtn">&nbsp;&nbsp;Edit</button></div>
@@ -277,10 +266,9 @@
               <button onClick="nameSubmitt()" id="nameSubmit">Submit changes</button>
             </div>
             <!--Delete user account-->
-            <br/><br/>
+            <hr>
             	<button onClick="deleteUserAcc()" id="deleteUserbtn" style="background-color:red" class="mdl-button mdl-js-button mdl-button--raised">Delete account</button>
           </div>
-          <br><br><br>
       </main>
 <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer__middle-section">
