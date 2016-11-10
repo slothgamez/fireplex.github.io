@@ -82,29 +82,9 @@
            <!--Form action: http://formspree.io/ampersand2909@gmail.comv-->
            <h6>Contact us!</h6>
            <p>Fill in your details below, and we'll reply as soon as possible.</p>
-           <form action="https://www.google.com/recaptcha/api/siteverify?secret=6Lc00B4TAAAAACrlt27-wY-jg-BDmmrLEqbxfTt_&response=g-recaptcha-response" method="post">
-            <div class="row uniform collapse-at-2">
-             <div class="6u">
-              <input type="text" name="_replyto" placeholder="Email">
-             </div>
-            </div>
-            <div class="12u">
-             <textarea name="Message" placeholder="Message..." rows="4" cols="50" maxlength="500"></textarea>
-            </div>
-            <br>
-            <div style="display:none">
-             <input type="hidden" name="_subject" value="New submission!">
-             <input type="hidden" name="_next" value="contact/thanks">
-             <input type="text" name="_gotcha">
-            </div>
-            <div class="row uniform">
-             <div class="12u">
-              <div class="actions">
-                <div class="g-recaptcha" data-sitekey="6Lc00B4TAAAAAPdWjbr2vlKNu3gLSkIEl5nZUjdB"></div><br />
-                <input type="submit" class="special" value="Send">
-              </div>
-             </div>
-            </div>
+           <form method="post">
+               <input type="text" name="captcha_data"/>
+               <input type="submit" name="submit" value=" Submit "/>
            </form>
           </div>
         </main>
