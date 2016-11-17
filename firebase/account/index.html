@@ -200,14 +200,14 @@
   
 <style>
 .btn {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+  -webkit-border-radius: 16;
+  -moz-border-radius: 16;
+  border-radius: 16px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
   background: #78bdeb;
-  padding: 10px 20px 10px 20px;
+  padding: 4px 10px 4px 10px;
   text-decoration: none;
 }
 
@@ -264,7 +264,7 @@
             <!--Profile picture display and edit-->
             <div id="profile-picture-div">
               <img id="account-picture" src="http://fireplex.github.io/firebase/account/silhouette.jpg"/ height="50" width="50">
-              <span id="picbtn" style="display:inline"><button onClick="popupformPicture()" id="pictureEditbtn">&nbsp;&nbsp;Edit</button></span>
+              <span id="picbtn" style="display:inline"><button onClick="popupformPicture()" id="pictureEditbtn" class="btn">&nbsp;&nbsp;Edit</button></span>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="pictureChange" placeholder="Image url"/>
               <button onCLick="pictureSubmitt()" id="pictureSubmit" class="btn">Submit changes</button>
             </div>
@@ -272,7 +272,7 @@
             <hr>
             <div id="email-div">
               <span id="account-email" style="display:inline"></span>
-              <div id="emailbtn"><button onClick="popupformEmail()" id="emailEditbtn">&nbsp;&nbsp;Edit</button>
+              <div id="emailbtn"><button onClick="popupformEmail()" id="emailEditbtn" class="btn">&nbsp;&nbsp;Edit</button>
               </div><input class="mdl-textfield__input" style="display:inline;width:auto;" id="emailChange" placeholder="New email"/>
               <button onClick="emailSubmitt()" id="emailSubmit" class="btn">Submit changes</button>
             </div>
@@ -280,7 +280,7 @@
             <hr>
             <div id="name-div">
               <span id="account-name">null</span>
-              <div id="namebtn"><button onClick="popupformName()" id="nameEditbtn">&nbsp;&nbsp;Edit</button></div>
+              <div id="namebtn"><button onClick="popupformName()" id="nameEditbtn" class="btn">&nbsp;&nbsp;Edit</button></div>
               <input class="mdl-textfield__input" style="display:inline;width:auto;" id="nameChange" placeholder="New name"/>
               <button onClick="nameSubmitt()" id="nameSubmit" class="btn">Submit changes</button>
             </div>
