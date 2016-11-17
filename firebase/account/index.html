@@ -215,6 +215,23 @@
   background: #f4f4f4;
   text-decoration: none;
 }
+  
+.btn_del {
+  -webkit-border-radius: 16;
+  -moz-border-radius: 16;
+  border-radius: 16px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 15px;
+  background: #ffffff;
+  padding: 4px 10px 4px 10px;
+  text-decoration: none;
+}
+
+.btn_del:hover {
+  background: #ff0000;
+  text-decoration: none;
+}
 </style>
 <body background="background.png">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -286,7 +303,7 @@
             </div>
             <!--Delete user account-->
             <hr>
-            	<button onClick="deleteUserAcc()" id="deleteUserbtn" style="background-color:red" class="mdl-button mdl-js-button mdl-button--raised">Delete account</button>
+            	<button onClick="deleteUserAcc()" id="deleteUserbtn" class="mdl-button mdl-js-button mdl-button--raised btn_del">Delete account</button>
           </div>
       </main>
 <footer class="mdl-mega-footer">
