@@ -88,8 +88,14 @@
 						var spaceRef = storageRef.child('image/Desert.jpg');
 						//SpaceRef is pointing to "images/blah.png"
 						//ImageRef still keeps pointing to 'images'
+						
+						//Reference the image element as a variable to use in JS
+						var test = document.getElementById("test");
+						
+						test.src = spaceRef;
 					</script>
           <!--Put everything in here-->
+					<img src="" name="test"/>
         </main>
 	  <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer__middle-section">
