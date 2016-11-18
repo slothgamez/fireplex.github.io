@@ -27,6 +27,8 @@
   
   // Reference to the storage service
   var storage = firebase.storage();
+  // Create a storage reference from our storage service
+	var storageRef = storage.ref();
 </script>
 
 <head>
@@ -72,6 +74,21 @@
             </nav>
         </div>
         <main class="mdl-layout__content">
+					<script>
+						//Reference to the storage service
+						var storage = firebase.storage();
+						//Create a storage reference from our storage service
+						var storageRef = storage.ref();
+						
+						//Create a child reference
+						var imagesRef = storageRef.child('image');
+						//ImageRef is now pointing to 'images'
+						
+						//Delimit the path with a '/'
+						var spaceRef = storageRef.child('image/Desert.jpg');
+						//SpaceRef is pointing to "images/blah.png"
+						//ImageRef still keeps pointing to 'images'
+					</script>
           <!--Put everything in here-->
         </main>
 	  <footer class="mdl-mega-footer">
