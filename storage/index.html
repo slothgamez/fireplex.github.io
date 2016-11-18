@@ -77,22 +77,17 @@
 					<script>
 						//Reference to the storage service
 						var storage = firebase.storage();
-						//Create a storage reference from our storage service
-						var storageRef = storage.ref();
+						var storageRef = storage.ref('image/Desert.jpg');
 						
-						//Create a child reference
-						var imagesRef = storageRef.child('image');
-						//ImageRef is now pointing to 'images'
+						//Create a ref from a google cloud stoage URI
+						var gsRef = storage.refFromURL('gs://bucket/image/Desert.jpg');
 						
-						//Delimit the path with a '/'
-						var spaceRef = storageRef.child('image/Desert.jpg');
-						//SpaceRef is pointing to "images/blah.png"
-						//ImageRef still keeps pointing to 'images'
+						//Creater a ref from a HTTPS url
+						var httpRef = storage.refFromURL('https://firebasestorage.googleapis.com/b/bucket/o/image%20Desert.jpg');
 						
 						//Reference the image element as a variable to use in JS
 						var test = document.getElementById("test");
-						
-						test.src = spaceRef;
+						test.src = httpRef;
 					</script>
           <!--Put everything in here-->
 					<img src="" name="test"/>
