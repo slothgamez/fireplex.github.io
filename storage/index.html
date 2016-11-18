@@ -77,17 +77,33 @@
 					<script>
 						//Reference to the storage service
 						var storage = firebase.storage();
-						var storageRef = storage.ref('image/Desert.jpg');
+						var storageRef = storage.ref('images');
+						var imageRef = storageRef.child('images/Desert.jpg');
 						
-						//Create a ref from a google cloud stoage URI
-						var gsRef = storage.refFromURL('gs://bucket/image/Desert.jpg');
-						
-						//Creater a ref from a HTTPS url
-						var httpRef = storage.refFromURL('https://firebasestorage.googleapis.com/b/project-3591775765881809294.appspot.com/o/image%20Desert.jpg');
-						
-						//Reference the image element as a variable to use in JS
-						var test = document.getElementById("test");
-						test.src = httpRef;
+						//Get the download URL
+						imageRef.getDownloadURL().then(function(url) {
+							var test = document.getElementById("test");
+							alert(url);
+							test.src = url;
+						}).catch(function(error) {
+							switch (error.code {
+											case 'storage/object_not_found':
+												//File doesn't exist
+												break;
+											
+											case 'storage/unauthorized':
+												//User doesn't have permission to access the object
+												break;
+											
+											case 'storage/canceled:
+												//User cancelled the upload
+												break;
+											
+											case 'storage/unknown':
+												// Unknown error, inspect the server response
+												break;
+											}
+											});
 					</script>
           <!--Put everything in here-->
 					<img src="" name="test"/>
