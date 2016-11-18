@@ -77,8 +77,8 @@
 					<script>
 						//Reference to the storage service
 						var storage = firebase.storage();
-						var storageRef = storage.ref('images');
-						var imageRef = storageRef.child('/Desert.jpg');
+						var storageRef = storage.ref('');
+						var imageRef = storageRef.child('Desert.jpg');
 						
 						//Get the download URL
 						imageRef.getDownloadURL().then(function(url) {
