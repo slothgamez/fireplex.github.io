@@ -112,6 +112,51 @@
                 window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/cherry-blossom-tree/");
               }
             }
+            
+            function shareWatch() {
+              if (shareType == "twitter") {
+                window.location.href=("https://twitter.com/intent/tweet?text=Check%20out%20this%20render%20from%20Feeka%27s%20portfolio!%0ahttp://fireplex.github.io/submmissions/ice-watch/");
+              }
+              if (shareType == "google") {
+                window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/ice-watch/");
+              }
+            }
+            
+            function shareNeon() {
+              if (shareType == "twitter") {
+                window.location.href=("https://twitter.com/intent/tweet?text=Check%20out%20this%20render%20from%20Feeka%27s%20portfolio!%0ahttp://fireplex.github.io/submmissions/b-neon/");
+              }
+              if (shareType == "google") {
+                window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/b-neon/");
+              }
+            }
+            
+            function shareSnow() {
+              if (shareType == "twitter") {
+                window.location.href=("https://twitter.com/intent/tweet?text=Check%20out%20this%20render%20from%20Feeka%27s%20portfolio!%0ahttp://fireplex.github.io/submmissions/snowy-forest/");
+              }
+              if (shareType == "google") {
+                window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/snowy-forest/");
+              }
+            }
+            
+            function shareFire() {
+              if (shareType == "twitter") {
+                window.location.href=("https://twitter.com/intent/tweet?text=Check%20out%20this%20render%20from%20Feeka%27s%20portfolio!%0ahttp://fireplex.github.io/submmissions/campfire/");
+              }
+              if (shareType == "google") {
+                window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/campfire/");
+              }
+            }
+            
+            function shareComp() {
+              if (shareType == "twitter") {
+                window.location.href=("https://twitter.com/intent/tweet?text=Check%20out%20this%20render%20from%20Feeka%27s%20portfolio!%0ahttp://fireplex.github.io/submmissions/halloween/");
+              }
+              if (shareType == "google") {
+                window.location.href=("https://plus.google.com/share?url=http://fireplex.github.io/submmissions/halloween/");
+              }
+            }
           </script>
           <style>
           .blossom-card-wide.mdl-card {
@@ -248,14 +293,13 @@
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
-
+                <!--Share buttons menu for each seperate post-->
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
                   <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
                   <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareBlossom()">Share via Twitter</li>
                 <li class="mdl-menu__item" onMouseDown="shareType='google'; shareBlossom()">Share via Google</li>
                 </ul>
-                
               </div>
             </div>
           </div>
@@ -273,9 +317,16 @@
                 </a>
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
+                <!--Share buttons menu for each seperate post-->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                  <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
+                  <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareWatch()">Share via Twitter</li>
+                <li class="mdl-menu__item" onMouseDown="shareType='google'; shareWatch()">Share via Google</li>
+                </ul>
               </div>
             </div>
           </div><br>
@@ -293,9 +344,16 @@
                 </a>
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
+                <!--Share buttons menu for each seperate post-->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                  <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
+                  <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareNeon()">Share via Twitter</li>
+                <li class="mdl-menu__item" onMouseDown="shareType='google'; shareNeon()">Share via Google</li>
+                </ul>
               </div>
             </div>
           </div><br>
@@ -313,9 +371,16 @@
                 </a>
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
+                <!--Share buttons menu for each seperate post-->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                  <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
+                  <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareSnow()">Share via Twitter</li>
+                <li class="mdl-menu__item" onMouseDown="shareType='google'; shareSnow()">Share via Google</li>
+                </ul>
               </div>
             </div>
           </div><br>
@@ -333,9 +398,16 @@
                 </a>
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
+                <!--Share buttons menu for each seperate post-->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                  <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
+                  <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareFire()">Share via Twitter</li>
+                <li class="mdl-menu__item" onMouseDown="shareType='google'; shareFire()">Share via Google</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -353,9 +425,16 @@
                 </a>
               </div>
               <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="demo-menu-lower-right">
                   <a href="http://www.google.com"></a><i class="material-icons">share</i>
                 </button>
+                <!--Share buttons menu for each seperate post-->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                  <li class="mdl-menu__item" onMouseDown="alert('Currently unavailable');">Share via Facebook</li>
+                  <li class="mdl-menu__item" onMouseDown="shareType='twitter'; shareComp()">Share via Twitter</li>
+                <li class="mdl-menu__item" onMouseDown="shareType='google'; shareComp()">Share via Google</li>
+                </ul>
               </div>
             </div>
           </div>
