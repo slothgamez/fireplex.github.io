@@ -114,6 +114,15 @@
         var user = firebase.auth().currentUser;
       if (picture.length < 5) {
          alert("The URL is not valid");
+        user.updateProfile({
+          photoURL: "http://fireplex.github.io/firebase/account/silhouette.jpg"
+        }).then(function() {
+          alert("Account picture changed to default instead")
+          // Update successful.
+        }, function(error) {
+          alert("An error occurred. Please contact the webmaster. " + error)
+          // An error happened.
+        });
       } else {
         user.updateProfile({
           photoURL: picture
