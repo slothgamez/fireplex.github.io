@@ -131,6 +131,7 @@
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
+					document.getElementById('ver-stat').textContent = 'Ver stat: ' + emailVerified;
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           if (email == "toxicraptor98@gmail.com") {
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully. You also have admin priviliges!';
@@ -242,6 +243,7 @@
           <div class="quickstart-user-details-container">
             <br /><h5>Sign in status:</h5><span id="quickstart-sign-in-status">Unknown</span>
           </div>
+						<br /><p>Verif stat</p><span id="ver-stat">Null</span>
           </div>
         </main>
 	  <footer class="mdl-mega-footer">
