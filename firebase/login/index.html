@@ -119,12 +119,6 @@
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
-        if (user.emailVerified) {
-          console.log('Email verified');
-        } else {
-          console.log('Email not verified');
-					alert("Your email is not verified. ")
-        }
         if (user) {
           // User is signed in.
 	  if (user.emailVerified) {
@@ -145,9 +139,41 @@
           }
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
 	  } else {
-	    user.sendEmailVerification();
-	    alert('Your email is not verified! Go to your inbox and verify your account to sign in');
-	    window.location.href = 'https://fireplex.github.io/';
+				//Popup request for resending verification email
+				swal({
+					title: 'Attention!',
+					text: "Your email isn't verified yet. Click 'resend' if you never recieved an email. However, just click cancel if you already have the email",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Resend',
+					cancelButtonText: 'Cancel',
+					confirmButtonClass: 'btn btn-success',
+					cancelButtonClass: 'btn btn-danger',
+					buttonsStyling: false
+				}).then(function () {
+					//send email
+					user.sendEmailVerification();
+					alert('Your email is not verified! Go to your inbox and verify your account to sign in');
+					window.location.href = 'https://fireplex.github.io/';
+					swal(
+						'Resent succesfully',
+						'A new verification email has been sent to you.',
+						'success'
+					)
+				}, function (dismiss) {
+					// dismiss can be 'cancel', 'overlay',
+					// 'close', and 'timer'
+					if (dismiss === 'cancel') {
+						swal(
+							'Cancelled',
+							'Dismissed resending of the verification email.',
+							'error'
+						)
+					}
+				})
+			//end of popup
 	  }
           // [END_EXCLUDE]
         } else {
@@ -258,14 +284,6 @@
                 <li><a href="https://fireplex.github.io/contact">Contact</a></li>
               </ul>
             </div>
-          <script>
-						swal({
-							title: 'Error!',
-							text: 'Do you want to continue',
-							type: 'error',
-							confirmButtonText: 'Cool'
-						})
-					</script>
           </footer>
     </div>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
