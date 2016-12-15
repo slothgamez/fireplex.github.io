@@ -66,6 +66,160 @@
 <script type="text/javascript">
 </script>
 
+  <script type="text/javascript">
+    /**
+     * Handles the sign in button press.
+     */
+    function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
+    }
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          console.error(error);
+        }
+        // [END_EXCLUDE]
+      });
+      
+      // [END createwithemail]
+    }
+    /**
+     * Handles registering callbacks for the auth status.
+     *
+     * This method registers a listener with firebase.auth().onAuthStateChanged. This listener is called when
+     * the user is signed in or out, and that is where we update the UI.
+     *
+     * When signed in, we also authenticate to the Firebase Realtime Database.
+     */
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+	  if (user.emailVerified) {
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var refreshToken = user.refreshToken;
+          var providerData = user.providerData;
+          // [START_EXCLUDE silent]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
+          if (email == "toxicraptor98@gmail.com") {
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully. You also have admin priviliges!';
+          } else {
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
+          }
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+	  } else {
+				//Popup request for resending verification email
+				swal({
+					title: 'Attention!',
+					text: "Your email isn't verified yet. Click 'resend' if you never recieved an email. However, just click cancel if you already have the email",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Resend',
+					cancelButtonText: 'Cancel',
+					confirmButtonClass: 'btn btn-success',
+					cancelButtonClass: 'btn btn-danger',
+					buttonsStyling: false
+				}).then(function () {
+					//send email
+					user.sendEmailVerification();
+					//endof send email
+					swal(
+						'Resent succesfully',
+						'A new verification email has been sent to you.',
+						'success'
+					)
+				}, function (dismiss) {
+					// dismiss can be 'cancel', 'overlay',
+					// 'close', and 'timer'
+					if (dismiss === 'cancel') {
+						swal(
+							'Cancelled',
+							'Dismissed resending of the verification email.',
+							'error'
+						)
+					}
+				})
+			//end of popup
+	  }
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE silent]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+
 <body background="background.png">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -114,7 +268,13 @@
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+					<!-- Modal body -->
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <a href="http://fireplex.github.io/firebase/account"><button class="mdl-button mdl-js-button mdl-button--raised">Account settings</button></a>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
