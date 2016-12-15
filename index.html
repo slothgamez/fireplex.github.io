@@ -248,7 +248,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign-up <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Login </a></li>
-            <li><a href="#">Sign up </a></li>
+            <li><a href="#" data-toggle="modal" data-target="#signupModal">Sign up </a></li>
+						<li><a href="#">Account settings </a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" style="font-size: 12px;">Forgot your password? </a></li>
           </ul>
@@ -273,13 +274,39 @@
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
-          <a href="http://fireplex.github.io/firebase/account"><button class="mdl-button mdl-js-button mdl-button--raised">Account settings</button></a>
           <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary">Login</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+	<!-- Firebase sign up modal -->
+  <div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign up</h4>
+        </div>
+        <div class="modal-body">
+					<!-- Modal body -->
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
+					<!-- Modal body end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Sign up</button>
         </div>
       </div>
       
