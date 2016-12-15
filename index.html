@@ -219,7 +219,6 @@
       initApp();
     };
   </script>
-
 <body background="background.png">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -238,7 +237,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Homepage <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Login </a></li>
         <li><a href="#">Forum </a></li>
         <li><a href="#">About </a></li>
         <li><a href="#">Contact </a></li>
@@ -261,7 +259,7 @@
 </nav>
 	<!-- Firebase login modal -->
   <div class="modal fade" id="loginModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-sm">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -274,7 +272,6 @@
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
-          <!--<button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>-->
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
@@ -288,7 +285,7 @@
 	
 	<!-- Firebase sign up modal -->
   <div class="modal fade" id="signupModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-sm">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -301,12 +298,11 @@
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Sign up</button>
+					<button type="button" class="btn btn-primary" id="quickstart-sign-up" name="signup">Sign up</button>
         </div>
       </div>
       
