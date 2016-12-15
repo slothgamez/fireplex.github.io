@@ -128,14 +128,18 @@
           <div class="caption">
             <h3>Cherry Blossom Tree</h3>
             <p>...</p>
-            <p><a href="#" class="btn btn-default" role="button">Learn more</a> <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Share  <span class="caret"></span></a></p>
-						<li class="dropdown">
-							<ul class="dropdown-menu">
-								<li><a href="#">Share via Facebook </a></li>
-								<li><a href="#">Share via Twitter </a></li>
-								<li><a href="#">Share via Google </a></li>
-							</ul>
-						</li>
+            <p><a href="#" class="btn btn-default" role="button">Learn more</a> <!--<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Share  <span class="caret"></span></a>--></p>
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="shareBlossom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									Share
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="shareBlossom">
+									<li><a href="#">Share via Facebook</a></li>
+									<li><a href="#">Share via Twitter</a></li>
+									<li><a href="#">Share via Google Plus</a></li>
+								</ul>
+							</div>
           </div>
         </div>
       </div>
