@@ -167,6 +167,7 @@
           var uid = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
+					document.getElementById('account-email').innerHTML = "Email: " + email;
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           if (email == "toxicraptor98@gmail.com") {
@@ -342,6 +343,30 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button name="passwordreset" id="password-reset" type="button" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+		<!-- Firebase edit email modal -->
+  <div class="modal fade" id="passresetModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit email</h4>
+        </div>
+        <div class="modal-body">
+					<!-- Modal body -->
+					<input id="emailChange" placeholder="New email"/>
+					<!-- Modal body end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="emailSubmit" type="button" class="btn btn-primary">Submit changes</button>
         </div>
       </div>
       
