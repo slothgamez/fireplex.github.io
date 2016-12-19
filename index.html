@@ -68,6 +68,18 @@
 
   <script type="text/javascript">
     /**
+     * Handles the password reset process
+     */
+    function handlePasswordReset() {
+      var auth = firebase.auth();
+      var emailAddress = document.getElementById('prEmail').value;
+      auth.sendPasswordResetEmail(emailAddress).then(function() {
+        alert('Reset email sent.');
+      }, function(error) {
+        console.log(error)
+      });
+    }
+    /**
      * Handles the sign in button press.
      */
     function toggleSignIn() {
@@ -214,11 +226,13 @@
       // [END authstatelistener]
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+			document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
     }
     window.onload = function() {
       initApp();
     };
   </script>
+	
 <body background="background.png">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -333,24 +347,6 @@
       
     </div>
   </div>
-	
-  <script type="text/javascript">
-    /**
-     * Handles the password reset process
-     */
-    function handlePasswordReset() {
-      var auth = firebase.auth();
-      var emailAddress = document.getElementById('prEmail').value;
-      auth.sendPasswordResetEmail(emailAddress).then(function() {
-        alert('Reset email sent.');
-      }, function(error) {
-        console.log(error)
-      });
-    }
-    window.onload = function() {
-      document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
-    };
-  </script>
 	
   <p>You can go check out the scrap renders <a href="https://fireplex.github.io/scraps/" style="color: blue;">here!</a></p>
   
