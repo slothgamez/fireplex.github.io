@@ -1,17 +1,4 @@
 <!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-      https://www.apache.org/licenses/LICENSE-2.0
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 <html lang="en">
 
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -29,95 +16,357 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="About page.">
+    <meta name="description" content="The homepage for my Blender porfolio. Here you'll find all my recent submissions at the latest updates.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-yellow.min.css" /> 
-    <link rel="stylesheet" href="styles.css" />
+    <title>Homepage - Feeka's Blender Portfolio</title>
+    
+    <!-- Latest jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous">
+    </script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-<body background="background.png">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-            <div class="mdl-layout__header-row portfolio-logo-row">
-                <span class="mdl-layout__title">
-                    <div class="portfolio-logo"></div>
-                    <span class="mdl-layout__title">Website Title</span>
-                </span>
-            </div>
-            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
-                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="http://fireplex.github.io/">Home</a>
-                    <a class="mdl-navigation__link is-active" href="http://fireplex.github.io/firebase/login">Login</a>
-                    <a class="mdl-navigation__link" href="http://fireplex.github.io/firebase/forum">Forum</a>
-                    <a class="mdl-navigation__link" href="http://fireplex.github.io/about">About</a>
-                    <a class="mdl-navigation__link" href="http://fireplex.github.io/contact">Contact</a>
-                    <a class="mdl-navigation__link" href="http://fireplex.github.io/commission-home">Commissioning</a>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="http://fireplex.github.io/">Home</a>
-                <a class="mdl-navigation__link" href="http://fireplex.github.io/firebase/login">Login</a>
-                <a class="mdl-navigation__link" href="http://fireplex.github.io/firebase/forum">Forum</a>
-                <a class="mdl-navigation__link" href="http://fireplex.github.io/about">About</a>
-                <a class="mdl-navigation__link" href="http://fireplex.github.io/contact">Contact</a>
-                <a class="mdl-navigation__link" href="http://fireplex.github.io/commission-home">Commissioning</a>
-            </nav>
-        </div>
-        <main class="mdl-layout__content">
-          <h3>About this site.</h3>
-          <p>Welcome to my portfolio web page. On this site you will be able to see all of my available 3D renders to date.</p>
-          <p>The software that I use to do my work is Blender, which is a free open-source program made by Blender Foundation. I am self taught in Blender, and have been doing it as a hobby for roughly 4 years. Willing to learn more in 3D, I go about the internet searching for ways other people have done things, and attempt to adapt them in my own work.</p>
-          <p><b>Note:</b> If required you can request for the full resolution files or the raw blend files on the contact page.</p>
-        </main>
-    	  <footer class="mdl-mega-footer">
-                <div class="mdl-mega-footer__middle-section">
-                  
-                  <div class="mdl-mega-footer__drop-down-section">
-                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                    <h1 class="mdl-mega-footer__heading">Home</h1>
-                    <ul class="mdl-mega-footer__link-list">
-                      <li><a href="https://fireplex.github.io">Home page</a></li>
-                      <li><a href="https://fireplex.github.io/scraps">Scraps</a></li>
-                    </ul>
-                  </div>
-                  
-                  <div class="mdl-mega-footer__drop-down-section">
-                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                    <h1 class="mdl-mega-footer__heading">Login</h1>
-                    <ul class="mdl-mega-footer__link-list">
-                      <li><a href="https://fireplex.github.io/firebase/account">Account settings</a></li>
-                      <li><a href="https://fireplex.github.io/firebase/login">Login & Signup</a></li>
-                      <li><a href="https://fireplex.github.io/firebase/reset-password">Reset password</a></li>
-                    </ul>
-                  </div>
-                  
-                  <div class="mdl-mega-footer__drop-down-section">
-                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                    <h1 class="mdl-mega-footer__heading">Forum</h1>
-                    <ul class="mdl-mega-footer__link-list">
-                      <li><a href="https://fireplex.github.io/firebase/forum">Forum page</a></li>
-                    </ul>
-                  </div>
-                  
-                </div>
-              
-                <div class="mdl-mega-footer__bottom-section">
-                  <div class="mdl-logo">Blender Portfolio</div>
-                  <ul class="mdl-mega-footer__link-list">
-                    <li><a href="https://fireplex.github.io/about">About</a></li>
-                    <li><a href="https://fireplex.github.io/contact">Contact</a></li>
-                  </ul>
-                </div>
-              
-              </footer>
-    </div>
-    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-</body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+</script>
+
+  <script type="text/javascript">
+    /**
+     * Handles the password reset process
+     */
+    function handlePasswordReset() {
+      var auth = firebase.auth();
+      var emailAddress = document.getElementById('prEmail').value;
+      auth.sendPasswordResetEmail(emailAddress).then(function() {
+        alert('Reset email sent.');
+      }, function(error) {
+        console.log(error)
+      });
+    }
+    /**
+     * Handles the sign in button press.
+     */
+    function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
+    }
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          console.error(error);
+        }
+        // [END_EXCLUDE]
+      });
+      
+      // [END createwithemail]
+    }
+    /**
+     * Handles registering callbacks for the auth status.
+     *
+     * This method registers a listener with firebase.auth().onAuthStateChanged. This listener is called when
+     * the user is signed in or out, and that is where we update the UI.
+     *
+     * When signed in, we also authenticate to the Firebase Realtime Database.
+     */
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+	  if (user.emailVerified) {
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var refreshToken = user.refreshToken;
+          var providerData = user.providerData;
+          // [START_EXCLUDE silent]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
+          if (email == "toxicraptor98@gmail.com") {
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully. You also have admin priviliges!';
+          } else {
+          	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
+          }
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+	  } else {
+				//Popup request for resending verification email
+				swal({
+					title: 'Attention!',
+					text: "Your email isn't verified yet. Click 'resend' if you never recieved an email. However, just click cancel if you already have the email",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Resend',
+					cancelButtonText: 'Cancel',
+					confirmButtonClass: 'btn btn-success',
+					cancelButtonClass: 'btn btn-danger',
+					buttonsStyling: false
+				}).then(function () {
+					//send email
+					user.sendEmailVerification();
+					//endof send email
+					swal(
+						'Resent succesfully',
+						'A new verification email has been sent to you.',
+						'success'
+					)
+				}, function (dismiss) {
+					// dismiss can be 'cancel', 'overlay',
+					// 'close', and 'timer'
+					if (dismiss === 'cancel') {
+						swal(
+							'Cancelled',
+							'Dismissed resending of the verification email.',
+							'error'
+						)
+					}
+				})
+			//end of popup
+	  }
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE silent]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+			document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+	
+<body background="background.png">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Blender Portfolio</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Homepage <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Forum </a></li>
+        <li><a href="#">About </a></li>
+        <li><a href="#">Contact </a></li>
+        <li><a href="#">Commissioning </a></li>
+       	
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign-up <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-toggle="modal" data-target="#loginModal">Login </a></li>
+            <li><a href="#" data-toggle="modal" data-target="#signupModal">Sign up </a></li>
+						<li><a href="http://fireplex.github.io/account-settings">Account settings </a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" style="font-size: 12px;" data-toggle="modal" data-target="#passresetModal">Forgot your password? </a></li>
+          </ul>
+        </li>
+				<li><span id="quickstart-sign-in-status">Unknown</span></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<!-- Firebase login modal -->
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+					<!-- Modal body -->
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+					<!-- Modal body end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button disabled name="signin" id="quickstart-sign-in" type="button" class="btn btn-primary">Login</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+	<!-- Firebase sign up modal -->
+  <div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign up</h4>
+        </div>
+        <div class="modal-body">
+					<!-- Modal body -->
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+					<!-- Modal body end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="quickstart-sign-up" name="signup">Sign up</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+		<!-- Firebase password reset modal -->
+  <div class="modal fade" id="passresetModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Password Reset</h4>
+        </div>
+        <div class="modal-body">
+					<!-- Modal body -->
+					<p>Insert your email</p>
+					<input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="prEmail" placeholder="Password reset email"/>
+					<!-- Modal body end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button name="passwordreset" id="password-reset" type="button" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+  <p>You can go check out the scrap renders <a href="https://fireplex.github.io/scraps/" style="color: blue;">here!</a></p>
+  
+  <!--Share buttons-->
+  <div id="share-buttons">
+    <p>
+    <!--Facebook share button-->
+    <span id="facebookSpan" style="white-space:nowrap;"><div>
+      <div class="fb-share-button" data-href="https://fireplex.github.io" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffireplex.github.io%2F&amp;src=sdkpreparse">Share</a></div>
+    </div></span>
+    <!--Twitter share button-->
+    <span id="twitterSpan" style="white-space:nowrap;"><a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text=Check%20out%20this%20site%20https%3A%2F%2Ffireplex.github.io" data-size="large" style="display: inline">
+    Tweet</a></span><br>
+    <!--Google plus share button-->
+    <span id="googleSpan" style="white-space:nowrap;"><div class="g-plus" data-action="share" data-height="24" data-href="https://fireplex.github.io"></div></span>
+    </p>
+  </div><br>
+	
+  <hr style="width: 100%; color: lightgray; height: 1px; background-color: lightgray;" />
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:blue">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+</body>
 </html>
