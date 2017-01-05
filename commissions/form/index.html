@@ -322,7 +322,24 @@
   <!-- Default panel contents -->
   <div class="panel-heading">Prices</div>
 
-
+	<form action="https://formspree.io/ampersand2909@gmail.com" method="POST">
+		Full name (required):<br>
+			<input type="text" name="name" required><br><br>
+		Email (required):<br>
+			<input type="email" name="_replyto" required><br><br>
+		Commission description (required):<br>
+			<input type="text" name="description" size="80" required><br><br>
+		Reference photo url (required):<br>
+			<input type="url" name="url" required><br><br>
+		Commission type (required):<br>
+			<input type="radio" name="commission type" value="sculpt" required disabled>Sculpt<br>
+			<input type="radio" name="commission type" value="simple 3d model" required>Simple 3D model<br>
+			<input type="radio" name="commission type" value="full scene, no bckgd" required>Full scene (No background)<br>
+			<input type="radio" name="commission type" value="full scene, simple bckgd" required>Full scene (simple background)<br><br>
+			<input type="submit" value="Send">
+			<input type="reset" value="Reset">
+		<!-- disabled="disabled" /-->
+	</form>
 </div>
 </body>
 </html>
