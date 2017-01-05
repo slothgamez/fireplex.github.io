@@ -13,7 +13,7 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://fireplex.github.io/firebase/login/</loc>
+  <loc>http://fireplex.github.io/about/</loc>
   <lastmod>2016-05-29T11:16:56+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>0.80</priority>
@@ -25,15 +25,21 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://fireplex.github.io/firebase/account</loc>
+  <loc>http://fireplex.github.io/account-settings</loc>
   <lastmod>2016-05-29T11:16:56+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>0.80</priority>  
 </url>
 <url>
-  <loc>http://fireplex.github.io/firebase/forum</loc>
+  <loc>http://fireplex.github.io/forum</loc>
   <lastmod>2016-05-29T11:16:56+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>0.80</priority>  
+</url>
+<url>
+	<loc>http://fireplex.github.io/commissions</loc>
+	<lastmod>2017-05-01T11:16:56+00:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.80</priority>
 </url>
 </urlset>
