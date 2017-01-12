@@ -261,6 +261,10 @@
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
 					if (email == "") {
+						document.getElementById('signin-div').style.visibility = 'visible';
+					} else {
+						document.getElementById('signin-div').style.visibility = 'hidden';
+					}
 						
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
 	  } else {
@@ -318,8 +322,6 @@
     }
     window.onload = function() {
       initApp();
-			var signinDiv = document.getElememtById("signin-div");
-			signinDiv.style.display = 'none'
     };
   </script>
 	
