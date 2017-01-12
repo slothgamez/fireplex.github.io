@@ -260,6 +260,8 @@
           } else {
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
+					if (email == "") {
+						
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
 	  } else {
 				//Popup request for resending verification email
@@ -515,6 +517,7 @@
       
     </div>
   </div>
+	<div class="alert alert-danger" role="alert"><strong>Error!</strong> Looks like you're not logged in. Try logging in or signing up then refresh the page.</div>
 	
 	<div class="page-header">
   	<h1>Account settings</h1>
