@@ -459,9 +459,9 @@
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
 					if (email == "") {
-						document.getElementById('signin-div').style.visibility = 'visible';
+						document.getElementById('signin-div').style.display = 'block';
 					} else {
-						document.getElementById('signin-div').style.visibility = 'hidden';
+						document.getElementById('signin-div').style.display = 'none';
 					}
 						
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
