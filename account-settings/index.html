@@ -310,8 +310,7 @@
       if (picture.length < 5) {
          alert("The URL is not valid");
         user.updateProfile({
-          photoURL: "http://fireplex.github.io/firebase/account/silhouette.jpg"
-					image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg"
+          photoURL: "http://fireplex.github.io/firebase/account/silhouette.jpg";
         }).then(function() {
           alert("Account picture changed to default instead")
           // Update successful.
