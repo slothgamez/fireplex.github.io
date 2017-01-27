@@ -284,15 +284,17 @@
       if (name.length < 4) {
         alert("Please enter a name");
       } else {
-        user.updateProfile({
-          displayName: name
-        }).then(function() {
-          alert("Name changed succesfully")
-          // Update successful.
-        }, function(error) {
-          alert("An error occurred. Please contact the webmaster. " + error)
-          // An error happened.
-        });
+				if (name.length > 21) {
+					user.updateProfile({
+						displayName: name
+					}).then(function() {
+						alert("Name changed succesfully")
+						// Update successful.
+					}, function(error) {
+						alert("An error occurred. Please contact the webmaster. " + error)
+						// An error happened.
+					});
+				}
       }
 		}
 		/**
