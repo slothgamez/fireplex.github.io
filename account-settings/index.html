@@ -285,6 +285,8 @@
         alert("Please enter a name");
       } else {
 				if (name.length > 21) {
+					alert("You're username is too long. Please enter a name shorter than 21 characters and try again.")
+				} else {
 					user.updateProfile({
 						displayName: name
 					}).then(function() {
