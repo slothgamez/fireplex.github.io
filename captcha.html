@@ -1,6 +1,14 @@
 <!DOCTYPE HMTL>
 <html>
 <body>
-	<p></p>
+	<p>Captcha number:</p>
+	<p id="captcha-no"></p>
+	<button onClick="captchaGen"></button>
+	
+	<script>
+		function captchaGen() {
+			document.getElementById("captcha-no").innerHTML = Math.floor((Math.random() * 9000) + 1000);
+		}
+	</script>
 </body>
 </html
