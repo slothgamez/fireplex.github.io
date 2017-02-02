@@ -6,9 +6,9 @@
 	<button onclick="captchaGen()">Generate</button>
 	
 	<script>
-		function captchaGen() {
+		window.onload = function() {
 			document.getElementById("captcha-no").innerHTML = Math.floor((Math.random() * 9000) + 1000);
-		}
+    }
 	</script>
 </body>
 </html>
