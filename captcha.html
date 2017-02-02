@@ -3,11 +3,23 @@
 <body>
 	<p>Captcha number:</p>
 	<p id="captcha-no"></p>
-	<button onclick="captchaGen()">Generate</button>
+	<button onclick="captchaAttempt()">Answer</button>
 	
 	<script>
 		window.onload = function() {
 			document.getElementById("captcha-no").innerHTML = Math.floor((Math.random() * 9000) + 1000);
+			var captchavalue = document.getElementById("captcha-no").innerHTML;
+			
+			function captchaAttempt() {
+				var usercaptcha = prompt("Enter the captcha displayed");
+				var captchavalue = document.getElementById("captcha-no").innerHTML;
+				
+				if (usercaptcha == captchavalue) {
+					alert("captcha pass");
+				} else {
+					alert("captcha fail");
+				}
+			}
     }
 	</script>
 </body>
