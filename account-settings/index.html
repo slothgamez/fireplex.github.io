@@ -305,12 +305,7 @@
 		function pictureSubmit() {
       var image = document.getElementById('account-picture');
       var picture = document.getElementById('pictureChange').value;
-      //if (image.src.match("silhouette")) {
-      //  image.src = picture;
-      //} else {
-      //  image.src = "http://fireplex.github.io/firebase/account/silhouette.jpg";
-      //}
-        var user = firebase.auth().currentUser;
+      var user = firebase.auth().currentUser;
       if (picture.length < 5) {
          alert("The URL is not valid");
         user.updateProfile({
