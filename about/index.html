@@ -473,6 +473,20 @@
 			<p><b>Note:</b> If required you can request for the full resolution files or the raw blend files on the contact page.
 		</div>
 		</div>
+		
+		<script>
+			// Get the input box
+			var textInput = document.getElementById('test-input');
+
+			// Listen for keystroke events
+			textInput.onkeydown = function (e) {
+					console.log('Input Value:', textInput.value);
+					if (textInput.value == "shia") {
+						alert("shia");
+					}
+			};
+		</script>
+		<input type="text" id="test-input" />
 <footer>
     <div class="footer" id="footer">
         <div class="container">
