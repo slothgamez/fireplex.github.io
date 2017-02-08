@@ -473,20 +473,24 @@
 			<p><b>Note:</b> If required you can request for the full resolution files or the raw blend files on the contact page.
 		</div>
 		</div>
-		
+	
 		<script>
-			// Get the input box
-			var textInput = document.getElementById('test-input');
-
-			// Listen for keystroke events
-			textInput.onkeydown = function (e) {
-					console.log('Input Value:', textInput.value);
-					if (textInput.value == "shia") {
-						alert("shia");
+			function getParameterByName(name, url) {
+					if (!url) {
+						url = window.location.href;
 					}
-			};
+					name = name.replace(/[\[\]]/g, "\\$&");
+					var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+							results = regex.exec(url);
+					if (!results) return null;
+					if (!results[2]) return '';
+					return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			var query = getParameterByName('secret');
+			if (query == "shia") {
+				alert("shia");
+			}
 		</script>
-		<input type="text" id="test-input" />
 <footer>
     <div class="footer" id="footer">
         <div class="container">
