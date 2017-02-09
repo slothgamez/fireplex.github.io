@@ -464,7 +464,7 @@
   <form action="https://formspree.io/ampersand2909@gmail.com" method="post" id="contactForm" name="contactForm">
 	<input type="text" name="_replyto" placeholder="Email" required><br>
 	<textarea name="Message" placeholder="Message..." cols="40" rows="5" required></textarea>
-  <input type="submit" name="submit" value=" Submit ">
+  <!--<input type="submit" name="submit" value=" Submit ">-->
 	<p>Captcha number:</p>
 	<p id="captcha-no"></p>
   <div style="display:none">
@@ -473,7 +473,7 @@
     <input type="text" name="_gotcha">
   </div>
   </form>
-	<button onClick="captchaAttempt()">Answer captcha</button>
+	<button onClick="captchaAttempt()">Submit</button>
 	<script>
 		window.onload = function() {
 			document.getElementById("captcha-no").innerHTML = Math.floor((Math.random() * 9000) + 1000);
