@@ -484,11 +484,10 @@
 			var captchavalue = document.getElementById("captcha-no").innerHTML;
 			
 			if (usercaptcha == captchavalue) {
-				alert("captcha pass");
-				var captchaPass = true;
+				alert("Captcha challenge passed!");
 			} else {
-				alert("captcha fail");
-				var captchaPass = false;
+				alert("Captcha challenge failed!");
+				location.reload();
 			}
 		}
 	</script>
