@@ -461,7 +461,7 @@
   </div>
   <h3>Contact us!</h3>
   <p>Fill in your details below, and we'll reply as soon as possible.</p>
-  <form action="https://formspree.io/ampersand2909@gmail.com" method="post" id="contact">
+  <form action="https://formspree.io/ampersand2909@gmail.com" method="post" id="contact" name="contact">
 	<input type="text" name="_replyto" placeholder="Email" required><br>
 	<textarea name="Message" placeholder="Message..." cols="40" rows="5" required></textarea>
   <input type="submit" name="submit" value=" Submit ">
@@ -485,7 +485,7 @@
 			
 			if (usercaptcha == captchavalue) {
 				alert("Captcha challenge passed!");
-				document.forms["contact"].submit();
+				document.contact.submit();
 			} else {
 				alert("Captcha challenge failed!");
 				location.reload();
