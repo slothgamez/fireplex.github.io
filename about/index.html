@@ -78,8 +78,11 @@
 					if (errorCode == "auth/user-disabled") {
 						document.getElementById("errorSpan").innerHTML = "This account was disabled";
 					}
+					if (errorCode == "auth/user-not-found") {
+						document.getElementById("errorSpan").innerHTML = "User deleted the account or doesn't exist";
+					}
           if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
+            document.getElementById("erorrSpan").innerHTML = "Password or email is incorrect";
           } else {
             console.error(error);
           }
