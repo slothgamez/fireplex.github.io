@@ -1,3 +1,7 @@
-RedirectMatch 503 ^/(?!404\.html)
 ErrorDocument 503 /404.html
-Header always set Retry-After "18000"
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /404.html [R=503,L]
