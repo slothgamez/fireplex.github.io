@@ -75,6 +75,9 @@
           var errorCode = error.code;
           var errorMessage = error.message;
           // [START_EXCLUDE]
+					if (errorCode == "auth/user-disabled") {
+						alert("This acccount is disabled!");
+					}
           if (errorCode === 'auth/wrong-password') {
             alert('Wrong password.');
           } else {
