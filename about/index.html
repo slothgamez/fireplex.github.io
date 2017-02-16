@@ -76,7 +76,7 @@
           var errorMessage = error.message;
           // [START_EXCLUDE]
 					if (errorCode == "auth/user-disabled") {
-						alert("This acccount is disabled!");
+						document.getElememtById("").textContent = "This account was disabled";
 					}
           if (errorCode === 'auth/wrong-password') {
             alert('Wrong password.');
@@ -407,6 +407,7 @@
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
+					<span id="errorSpan" style="color:grey">Signed out</span>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button disabled name="signin" id="quickstart-sign-in" type="button" class="btn btn-primary">Login</button>
         </div>
