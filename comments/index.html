@@ -10,7 +10,9 @@
 		const ref = new Firebase("https://project-3591775765881809294.firebaseio.com/");
 		const form = document.querySelector("form");
 
-		form.addEventListener("submit", postComment);
+		if(form) {
+			form.addEventListener("submit", postComment);
+		}
 
 		const timeStamp = () => {
 			let options = {
