@@ -75,8 +75,14 @@
           var errorCode = error.code;
           var errorMessage = error.message;
           // [START_EXCLUDE]
+					if (errorCode == "auth/user-disabled") {
+						document.getElementById("errorSpan").innerHTML = "This account was disabled";
+					}
+					if (errorCode == "auth/user-not-found") {
+						document.getElementById("errorSpan").innerHTML = "User deleted the account or doesn't exist";
+					}
           if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
+            document.getElementById("errorSpan").innerHTML = "Password or email is incorrect";
           } else {
             console.error(error);
           }
@@ -145,6 +151,7 @@
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+					document.getElementById('errorSpan').textContent = 'Hello ' + displayName + '. Signed in succesfully.';
 	  } else {
 				//Popup request for resending verification email
 				swal({
@@ -711,6 +718,7 @@ body {
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
+					<span id="errorSpan" style="color:grey">Signed out</span><br/>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button disabled name="signin" id="quickstart-sign-in" type="button" class="btn btn-primary">Login</button>
         </div>
