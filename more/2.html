@@ -37,6 +37,16 @@
 </script>
 
   <script type="text/javascript">
+		/**
+		* Handles the page count for pagination
+		*/
+		function handlePagination() {
+			var currentUrl = window.location.pathname;
+			echo(currentUrl);
+			if (currentUrl == "") {
+				echo("hello");
+			}
+		}
     /**
      * Handles the password reset process
      */
