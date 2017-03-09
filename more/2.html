@@ -38,20 +38,21 @@
 
   <script type="text/javascript">
 		/**
-		* Handles the back and forward buttons for pagination.
+		* Handles the forward button for pagination.
 		*/
-		function handlePagination() {
-			var currentUrl = window.location.pathname;
-			if (currentUrl == "/more/2.html") {
-				var forwardLink = "http://fireplex.github.io/more/3.html";
-				var backwardLink = "http://fireplex.github.io/";
-			}
-		}
-		
 		function paginationForward() {
 			var currentURL = window.location.pathname;
 			if (currentURL == "/more/2.html") {
 				window.location.href = "http://fireplex.github.io/more.3.html";
+			}
+		}
+		/**
+		* Handles the backward button for pagination.
+		*/
+		function paginationBackward() {
+			var currentURL = window.location.pathname;
+			if (currentURL = "/more/2.html") {
+				window.location.href = "http://fireplex.github.io/";
 			}
 		}
     /**
@@ -557,7 +558,7 @@
 	<nav aria-label="Page navigation">
 		<ul class="pagination">
 			<li>
-				<a href="#" aria-label="Previous">
+				<a href="#" aria-label="Previous" onclick="paginationBackward()">
 					<span aria-hidden="true">&laquo;</span>
 				</a>
 			</li>
