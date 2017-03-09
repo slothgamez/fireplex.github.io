@@ -64,6 +64,24 @@
 </script>
 
   <script type="text/javascript">
+		/**
+		* Handles the forward button for pagination.
+		*/
+		function paginationForward() {
+			var currentURL = window.location.pathname;
+			if (currentURL == "/") {
+				window.location.href = "http://fireplex.github.io/more/2.html";
+			}
+		}
+		/**
+		* Handles the backward button for pagination.
+		*/
+		function paginationBackward() {
+			var currentURL = window.location.pathname;
+			if (currentURL = "/") {
+				window.location.href = "http://fireplex.github.io/";
+			}
+		}
     /**
      * Handles the password reset process
      */
