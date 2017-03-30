@@ -230,8 +230,6 @@
     }
     window.onload = function() {
       initApp();
-			alert ("initApp execution complete");
-			gitLogin();
     };
   </script>
 <style>
@@ -433,6 +431,7 @@
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+					<button type="button" class="btn btn-default" onclick="gitLogin();">Login with Github</button>
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
