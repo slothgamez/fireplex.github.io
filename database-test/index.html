@@ -17,12 +17,14 @@
   firebase.initializeApp(config);
 	
 	var database = firebase.database();
+	var testSub = "testSub";
 	
 	function writeUserData(userId, name, email, imageUrl) {
-		firebase.database().ref('users/' + "userID").set({
-			username: "username",
+		firebase.database().ref('users/' + "49b939v92jgj5").set({
+			username: "Feeka",
 			email: "email",
-			profile_picture : "ImageURL"
+			profile_picture : "ImageURL",
+			testSub : testSub
 		});
 	}
 </script>
