@@ -42,7 +42,8 @@
 		//function readUserData() {
 			var usernameRef = firebase.database().ref('users/49b939v92jgj5/username');
 			usernameRef.on('value', function(snapshot) {
-				alert("recieved value for username");
+				alert("recieved value for username, the value is...");
+				alert(snapshot.val());
 			});	
 </script>
 	
