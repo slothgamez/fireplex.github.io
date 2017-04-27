@@ -17,18 +17,21 @@
   firebase.initializeApp(config);
 	
 	var database = firebase.database();
+	var name = "username";
+	var email = "email";
+	var profile_picture = "ImageURL";
 	var testSub = "testSub";
 	
-	function writeUserData(userId, name, email, imageUrl) {
+	function writeUserData(name, email, profile_picture, testSub) {
 		firebase.database().ref('users/' + "49b939v92jgj5").set({
-			username: "Feeka",
-			email: "email",
-			profile_picture : "ImageURL",
+			username: name,
+			email: email,
+			profile_picture : profile_picture,
 			testSub : testSub
 			
 		})
 		Promise.resolve('Success').then(function(userId, name, email, imageUrl) {
-		console.log(userId, name, email, imageUrl);
+		console.log(name, email, profile_picture, testSub);
 		});
 	};
 	
