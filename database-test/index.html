@@ -35,7 +35,7 @@
 		});
 	};
 	
-	function readUserData(userId, name, email, imageUrl) {
+	function readUserData() {
 		return firebase.database().ref('/users/49b939v92jgj5').once('value').then(function(snapshot) {
 			var readUsername = snapshot.val().username;
 			alert(username);
