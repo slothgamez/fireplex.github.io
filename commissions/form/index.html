@@ -47,11 +47,19 @@
 		* Writes the form data to the firebase database
 		*/
 		function writeFormData() {
-			var name = document.getElementById('name').value;
-			var replyTo = document.getElementById('replyTo').value;
-			var description = document.getElementById('description').value;
-			var url = document.getElementById('url').value;
-			var commissionType = document.getElementById('commissionType').value;
+			//identify each form element with a variable
+			var nameObject = document.getElementById('name');
+			var replyToObject = document.getElementById('replyTo');
+			var descriptionObject = document.getElementById('description');
+			var urlObject = document.getElementById('url').value;
+			var commissionTypeObject = document.getElementById('commissionType');
+			
+			//store the value of each element in the form in a variable
+			var name = nameObject.value;
+			var replyTo = replyTo.value;
+			var description = descriptionObject.value;
+			var url = urlObject.value;
+			var commissionType = commissionTypeObject.value;
 			
 			firebase.database().ref('users/' + uid).set({
 				_name: name,
