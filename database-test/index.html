@@ -18,7 +18,7 @@
 	
 	var database = firebase.database();
 	var userName = "username";
-	var userEmail = "email";
+	var userEmail = "ampersand2909@gmail.com";
 	var userProfilePicture = "ImageURL";
 	var testSub = "testSub";
 	
@@ -39,12 +39,12 @@
 	//		var readUsername = snapshot.val().username;
 	//		alert(username);
 	//	})};
-		//function readUserData() {
-			var usernameRef = firebase.database().ref('users/49b939v92jgj5/username');
-			usernameRef.on('value', function(snapshot) {
-				alert("recieved value for username, the value is...");
-				alert(snapshot.val());
-			});	
+		function readUserData() {
+			var emailRef = firebase.database().ref('users/49b939v92jgj5/email');
+			
+			emailRef.on('value', function(snapshot) {
+				alert("recieved value for username, the value is: " + snapshot.val());
+			})};	
 </script>
 	
 <body>
