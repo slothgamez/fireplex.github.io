@@ -26,10 +26,11 @@
 			profile_picture : "ImageURL",
 			testSub : testSub
 			
-			Promise.resolve('Success').then(function(userId, name, email, imageUrl) {
-			console.log(userId, name, email, imageUrl);
+		})
+		Promise.resolve('Success').then(function(userId, name, email, imageUrl) {
+		console.log(userId, name, email, imageUrl);
 		});
-		})};
+	};
 	
 	function readUserData(userId, name, email, imageUrl) {
 		return firebase.database().ref('/users/49b939v92jgj5').once('value').then(function(snapshot) {
