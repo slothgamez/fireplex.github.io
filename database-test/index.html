@@ -22,7 +22,7 @@
 	var userProfilePicture = "ImageURL";
 	var testSub = "testSub";
 	
-	function writeUserData(userName, userEmail, userProfilePicture, testSub) {
+	function writeUserData() {
 		firebase.database().ref('users/' + "49b939v92jgj5").set({
 			username: userName,
 			email: userEmail,
