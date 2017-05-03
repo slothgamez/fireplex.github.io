@@ -16,9 +16,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Commissions page (prices)">
+    <meta name="description" content="Here is listed the current status of commission request etc. This page will replace the current status page.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Commissions (prices) - Feeka's Blender Portfolio</title>
+    <title>Commissions (List) - Feeka's Blender Portfolio</title>
     
     <!-- Latest jquery -->
 		<script src="https://fireplex.github.io/jquery-3.1.1.min.js"></script>
@@ -43,6 +43,26 @@
 </script>
 
   <script type="text/javascript">
+		/**
+		 * Pull the form data submitted from the form page ready to be placed in a table
+		 */
+		function readFormData() {
+			var formRef = firebase.database().ref('users/' + window.userID);
+			
+			formRef.on('value', function(snapshot) {
+				var name = snapshot.val()._name;
+				var commissionType = snapshot.val()._commissionType;
+				var description = snapshot.val()._description;
+				var email = snapshot.val()._replyTo;
+				var url = snapshot.val()._url;
+				
+				document.getElementById('userName').innerHTML = name;
+				document.getElementById('userCommissionType').innerHTML = commissionType;
+				document.getElementById('userDescription').innerHTML = description;
+				document.getElementById('userEmail').innerHTML = email;
+				document.getElementById('userURL').innerHTML = url;
+			});
+		}
     /**
      * Handles the password reset process
      */
@@ -74,7 +94,7 @@
           alert('Please enter a password.');
           return;
         }
-        // Sign in with email and pass.
+        // Sign in with email and password.
         // [START authwithemail]
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
           // Handle Errors here.
@@ -147,6 +167,7 @@
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+					window.userID = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
@@ -214,7 +235,21 @@
     }
     window.onload = function() {
       initApp();
-    };
+			/*document.getElementById("captcha-no").innerHTML = Math.floor((Math.random() * 9000) + 1000);
+			var captchavalue = document.getElementById("captcha-no").innerHTML;*/
+    }
+		/*function captchaAttempt() {
+			var usercaptcha = prompt("Enter the captcha displayed");
+			var captchavalue = document.getElementById("captcha-no").innerHTML;
+			
+			if (usercaptcha == captchavalue) {
+				alert("Captcha challenge passed!");
+				document.forms["contactForm"].submit()
+			} else {
+				alert("Captcha challenge failed!");
+				location.reload();
+			}
+    };*/
   </script>
 <style>
 	.full {
@@ -361,9 +396,6 @@
 .payments {
 	font-size: 1.5em;	
 }
-#price_table {
-	width: 40%;
-}
 </style>
 <body background="background.png">
 <nav class="navbar navbar-default">
@@ -386,7 +418,7 @@
         <li><a href="https://fireplex.github.io/forum">Forum </a></li>
         <li><a href="https://fireplex.github.io/about">About </a></li>
         <li><a href="https://fireplex.github.io/contact">Contact </a></li>
-        <li class="active"><a href="#">Commissioning <span class="sr-only">(current)</span></a></li>
+        <li  class="active"><a href="#">Commissioning <span class="sr-only">(current)</span></a></li>
        	
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign-up <span class="caret"></span></a>
@@ -452,7 +484,6 @@
 					<button type="button" class="btn btn-primary" id="quickstart-sign-up" name="signup">Sign up</button>
         </div>
       </div>
-      
     </div>
   </div>
 	
@@ -477,44 +508,34 @@
 					<button name="passwordreset" id="password-reset" type="button" class="btn btn-primary">Reset</button>
         </div>
       </div>
-      
     </div>
   </div>
-
-  <!-- Table -->
-	<div id="price_table">
-		<table class="table">
+			<button type="button" class="btn btn-default" aria-label="Refresh" onClick="readFormData()">
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Refresh
+			</button>
+			<table class="table">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Commission type</th>
-					<th>Price</th>
+					<th>Name</th>
+					<th>Commissioner email</th>
+					<th>Commission Type</th>
+					<th>Reference URL</th>
+					<th>Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<th scope="row">1</th>
-					<td>Sculpt (currently unavailable)</td>
-					<td>FREE</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Simple 3D model</td>
-					<td>FREE</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Full scene (no background)</td>
-					<td>FREE</td>
-				</tr>
-				<tr>
-					<th scope="row">4</th>
-					<td>Full scene (simple background)</td>
-					<td>FREE</td>
+					<td id="userName">Null</td>
+					<td id="userEmail">Null</td>
+					<td id="userCommissionType">Null</td>
+					<td id="userRefURL">Null</td>
+					<td id="userDescription">Null</td>
 				</tr>
 			</tbody>
 		</table>
-	</div>
+	
 <footer>
     <div class="footer" id="footer">
         <div class="container">

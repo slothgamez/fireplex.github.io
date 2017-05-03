@@ -21,22 +21,58 @@
     <title>Commissions (form) - Feeka's Blender Portfolio</title>
     
     <!-- Latest jquery -->
-		<script src="http://fireplex.github.io/jquery-3.1.1.min.js"></script>
+		<script src="https://fireplex.github.io/jquery-3.1.1.min.js"></script>
     
     <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-yeti.min.css">
+		<link rel="stylesheet" href="https://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-yeti.min.css">
 
     <!-- Optional theme -->
-		<!--<link rel="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
+		<!--el="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
 
     <!-- Latest compiled and minified JavaScript -->
-		<script src="http://fireplex.github.io/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="https://fireplex.github.io/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
+		<!--Latest minified version of SweetAlert2-->
+		<script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
+	
+		<!--Latest compiled and minified CSS for SweetAlert2-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
 </head>
 	
 <script type="text/javascript">
 </script>
 
   <script type="text/javascript">
+		/**
+		* Writes the form data to the firebase database
+		*/
+		function writeFormData() {
+			//identify each form element with a variable
+			var name = document.getElementById('name').value;
+			var replyTo = document.getElementById('replyTo').value;
+			var description = document.getElementById('description').value;
+			var url = document.getElementById('url').value;
+			var commissionType = window.commissionType;
+			//var commissionType = document.getElementById('commissionType').value;
+			
+			//store the value of each element in the form of a variable
+			//var name = nameObject.value;
+			//var replyTo = replyToObject.value;
+			//var description = descriptionObject.value;
+			//var url = urlObject.value;
+			//var commissionType = commissionTypeObject.value;
+			firebase.database().ref('users/' + window.userID).set({
+				_name: name,
+				_replyTo: replyTo,
+				_description: description,
+				_url: url,
+				_commissionType: commissionType
+			})
+			Promise.resolve('Success').then(function() {
+				console.log(name, replyTo, description, url, commissionType);
+			});
+			
+		};
     /**
      * Handles the password reset process
      */
@@ -141,6 +177,7 @@
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+					window.userID = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
@@ -373,10 +410,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="http://fireplex.github.io">Homepage </a></li>
-        <li><a href="http://fireplex.github.io/forum">Forum </a></li>
-        <li><a href="http://fireplex.github.io/about">About </a></li>
-        <li><a href="http://fireplex.github.io/contact">Contact </a></li>
+        <li><a href="https://fireplex.github.io">Homepage </a></li>
+        <li><a href="https://fireplex.github.io/forum">Forum </a></li>
+        <li><a href="https://fireplex.github.io/about">About </a></li>
+        <li><a href="https://fireplex.github.io/contact">Contact </a></li>
         <li class="active"><a href="#">Commissioning <span class="sr-only">(current)</span></a></li>
        	
         <li class="dropdown">
@@ -384,7 +421,7 @@
           <ul class="dropdown-menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Login </a></li>
             <li><a href="#" data-toggle="modal" data-target="#signupModal">Sign up </a></li>
-						<li><a href="http://fireplex.github.io/account-settings">Account settings </a></li>
+						<li><a href="https://fireplex.github.io/account-settings">Account settings </a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" style="font-size: 12px;" data-toggle="modal" data-target="#passresetModal">Forgot your password? </a></li>
           </ul>
@@ -471,21 +508,21 @@
       
     </div>
   </div>
-
+	<div class="alert alert-warning" role="alert">Warning: All submissions to this form require the user to be registered and signed in, due to database related upload restrictions</div>
 	<form action="https://formspree.io/ampersand2909@gmail.com" method="POST">
 		Full name (required):<br>
-			<input type="text" name="name" required><br><br>
+			<input type="text" name="name" id="name"required><br><br>
 		Email (required):<br>
-			<input type="email" name="_replyto" required><br><br>
+			<input type="email" name="_replyto" id="replyTo" required><br><br>
 		Commission description (required):<br>
-			<textarea type="text" name="description" cols="40" rows="5" required></textarea><br><br>
+			<textarea type="text" name="description" id="description" cols="40" rows="5" required></textarea><br><br>
 		Reference photo url (required):<br>
-			<input type="url" name="url" required><br><br>
+			<input type="url" name="url" id="url" required><br><br>
 		Commission type (required):<br>
-			<input type="radio" name="commission type" value="sculpt" required disabled>Sculpt<br>
-			<input type="radio" name="commission type" value="simple 3d model" required>Simple 3D model<br>
-			<input type="radio" name="commission type" value="full scene, no bckgd" required>Full scene (No background)<br>
-			<input type="radio" name="commission type" value="full scene, simple bckgd" required>Full scene (simple background)<br><br>
+			<input type="radio" name="commission type" id="commissionType" value="sculpt" required disabled>Sculpt<br>
+			<input type="radio" name="commission type" id="commissionType" value="simple 3d model" onclick="window.commissionType = 'simple 3d model'" required>Simple 3D model<br>
+			<input type="radio" name="commission type" id="commissionType" value="full scene, no bckgd" onclick="window.commissionType = 'full scene, no bckgd'" required>Full scene (No background)<br>
+			<input type="radio" name="commission type" id="commissionType" value="full scene, simple bckgd" onclick="window.commissionType = 'full scene, simple bckgd'" required>Full scene (simple background)<br><br>
 			<input type="submit" value="Send">
 			<input type="reset" value="Reset">
 		<!-- disabled="disabled" /-->
@@ -497,17 +534,17 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Homepage </h3>
                     <ul>
-                        <li> <a href="http://fireplex.github.io/scraps"> Scraps </a> </li>
-                        <li> <a href="http://fireplex.github.io/account-settings"> Account settings </a> </li>
+                        <li> <a href="https://fireplex.github.io/scraps"> Scraps </a> </li>
+                        <li> <a href="https://fireplex.github.io/account-settings"> Account settings </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Commissions </h3>
                     <ul>
-                        <li> <a href="http://fireplex.github.io/commissions/status"> Status </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/prices"> Prices </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/form"> Commission form </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/wips"> WIP's </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/status"> Status </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/prices"> Prices </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/form"> Commission form </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/wips"> WIP's </a> </li>
                     </ul>
                 </div>
             </div>

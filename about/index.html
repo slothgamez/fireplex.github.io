@@ -21,16 +21,22 @@
     <title>About - Feeka's Blender Portfolio</title>
     
     <!-- Latest jquery -->
-		<script src="http://fireplex.github.io/jquery-3.1.1.min.js"></script>
+		<script src="https://fireplex.github.io/jquery-3.1.1.min.js"></script>
     
     <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-yeti.min.css">
+		<link rel="stylesheet" href="https://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-yeti.min.css">
 
-    <!-- Old theme -->
-		<!--<link rel="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
+    <!-- Optional theme -->
+		<!--el="stylesheet" href="http://fireplex.github.io/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
 
     <!-- Latest compiled and minified JavaScript -->
-		<script src="http://fireplex.github.io/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="https://fireplex.github.io/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
+		<!--Latest minified version of SweetAlert2-->
+		<script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
+	
+		<!--Latest compiled and minified CSS for SweetAlert2-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
 </head>
 	
 <script type="text/javascript">
@@ -38,7 +44,7 @@
 
   <script type="text/javascript">
     /**
-     * Handles the password reset process
+     * Handles the password reset processsssss
      */
     function handlePasswordReset() {
       var auth = firebase.auth();
@@ -49,6 +55,30 @@
         console.log(error)
       });
     }
+		/**
+		 * Handles the login for Github users
+		 */
+		function gitLogin() {
+			var provider = new firebase.auth.GithubAuthProvider();
+			alert("test");
+			firebase.auth().signInWithPopup(provider).then(function(result) {
+				alert("test");
+				// This gives you a GitHub Access Token. You can use it to access the GitHub API.
+				var token = result.credential.accessToken;
+				// The signed-in user info.
+				var user = result.user;
+				// ...
+			}).catch(function(error) {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				// The email of the user's account used.
+				var email = error.email;
+				// The firebase.auth.AuthCredential type that was used.
+				var credential = error.credential;
+				// ...
+			});
+		}
     /**
      * Handles the sign in button press.
      */
@@ -124,7 +154,6 @@
      * Handles registering callbacks for the auth status.
      *
      * This method registers a listener with firebase.auth().onAuthStateChanged. This listener is called when
-     * the user is signed in or out, and that is where we update the UI.
      *
      * When signed in, we also authenticate to the Firebase Realtime Database.
      */
@@ -373,18 +402,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="http://fireplex.github.io">Homepage </a></li>
-        <li><a href="http://fireplex.github.io/forum">Forum </a></li>
+        <li><a href="https://fireplex.github.io">Homepage </a></li>
+        <li><a href="https://fireplex.github.io/forum">Forum </a></li>
         <li class="active"><a href="#">About <span class="sr-only">(current)</span></a></li>
-        <li><a href="http://fireplex.github.io/contact">Contact </a></li>
-        <li><a href="http://fireplex.github.io/commissions">Commissioning </a></li>
+        <li><a href="https://fireplex.github.io/contact">Contact </a></li>
+        <li><a href="https://fireplex.github.io/commissions">Commissioning </a></li>
        	
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign-up <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Login </a></li>
             <li><a href="#" data-toggle="modal" data-target="#signupModal">Sign up </a></li>
-						<li><a href="http://fireplex.github.io/account-settings">Account settings </a></li>
+						<li><a href="https://fireplex.github.io/account-settings">Account settings </a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" style="font-size: 12px;" data-toggle="modal" data-target="#passresetModal">Forgot your password? </a></li>
           </ul>
@@ -409,6 +438,7 @@
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+					<button type="button" class="btn btn-default" onclick="gitLogin();">Login with Github</button>
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
@@ -497,7 +527,7 @@
 			}
 			var query = getParameterByName('secret');
 			if (query == "shia") {
-				var audio = new Audio('http://fireplex.github.io/about/shia.mp3');
+				var audio = new Audio('https://fireplex.github.io/about/shia.mp3');
 				audio.play();
 			}
 		</script>
@@ -508,17 +538,17 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Homepage </h3>
                     <ul>
-                        <li> <a href="http://fireplex.github.io/scraps"> Scraps </a> </li>
-                        <li> <a href="http://fireplex.github.io/account-settings"> Account settings </a> </li>
+                        <li> <a href="https://fireplex.github.io/scraps"> Scraps </a> </li>
+                        <li> <a href="https://fireplex.github.io/account-settings"> Account settings </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Commissions </h3>
                     <ul>
-                        <li> <a href="http://fireplex.github.io/commissions/status"> Status </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/prices"> Prices </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/form"> Commission form </a> </li>
-                        <li> <a href="http://fireplex.github.io/commissions/wips"> WIP's </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/status"> Status </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/prices"> Prices </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/form"> Commission form </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/wips"> WIP's </a> </li>
                     </ul>
                 </div>
             </div>

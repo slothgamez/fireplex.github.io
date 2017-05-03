@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Title</title>
+</head>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDLkMUzkUMtb9wov9zU-goFLhK-KOHQhKA",
+    authDomain: "project-3591775765881809294.firebaseapp.com",
+    databaseURL: "https://project-3591775765881809294.firebaseio.com",
+    projectId: "project-3591775765881809294",
+    storageBucket: "project-3591775765881809294.appspot.com",
+    messagingSenderId: "92945146306"
+  };
+  firebase.initializeApp(config);
+	
+	var database = firebase.database();
+	var userName = "username";
+	var userEmail = "ampersand2909@gmail.com";
+	var userProfilePicture = "ImageURL";
+	var testSub = "testSub";
+	
+	function writeUserData() {
+		firebase.database().ref('users/' + "49b939v92jgj5").set({
+			username: userName,
+			email: userEmail,
+			profile_picture : userProfilePicture,
+			testSub : testSub
+		})
+		Promise.resolve('Success').then(function(userId, name, email, imageUrl) {
+		console.log(userName, userEmail, userProfilePicture, testSub);
+		});
+	};
+	
+	//function readUserData() {
+	//	return firebase.database().ref('/users/49b939v92jgj5').once('value').then(function(snapshot) {
+	//		var readUsername = snapshot.val().username;
+	//		alert(username);
+	//	})};
+		function readUserData() {
+			var emailRef = firebase.database().ref('users/49b939v92jgj5/email');
+			
+			emailRef.on('value', function(snapshot) {
+				alert("recieved value for username, the value is: " + snapshot.val());
+			})};	
+</script>
+	
+<body>
+	
+</body>
+</html>
