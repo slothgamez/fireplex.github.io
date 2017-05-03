@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="The homepage for my Blender porfolio. Here you'll find all my recent submissions at the latest updates.">
+    <meta name="description" content="Here is listed the current status of commission request etc. This page will replace the current status page.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Commissions (List) - Feeka's Blender Portfolio</title>
     
@@ -43,6 +43,18 @@
 </script>
 
   <script type="text/javascript">
+		/**
+		 * Pull the form data submitted from the form page ready to be placed in a table
+		 */
+		function readFormData() {
+			var formRef = firebase.database().ref('users/' + window.userID);
+			
+			formRef.on('value', function(snapshot) {
+				var name = snapshot.val()._name;
+				var commissionType = snapshot.val()._commissionType;
+				var description = snapshot.val()._description;
+			});
+		}
     /**
      * Handles the password reset process
      */
@@ -147,6 +159,7 @@
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+					window.userID = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
