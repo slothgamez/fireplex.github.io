@@ -52,7 +52,8 @@
 			var replyTo = document.getElementById('replyTo').value;
 			var description = document.getElementById('description').value;
 			var url = document.getElementById('url').value;
-			var commissionType = document.getElementById('commissionType').value;
+			var commissionType = window.commissionType;
+			//var commissionType = document.getElementById('commissionType').value;
 			
 			//store the value of each element in the form of a variable
 			//var name = nameObject.value;
@@ -519,9 +520,9 @@
 			<input type="url" name="url" id="url" required><br><br>
 		Commission type (required):<br>
 			<input type="radio" name="commission type" id="commissionType" value="sculpt" required disabled>Sculpt<br>
-			<input type="radio" name="commission type" id="commissionType" value="simple 3d model" onclick="alert('hello')" required>Simple 3D model<br>
-			<input type="radio" name="commission type" id="commissionType" value="full scene, no bckgd" required>Full scene (No background)<br>
-			<input type="radio" name="commission type" id="commissionType" value="full scene, simple bckgd" required>Full scene (simple background)<br><br>
+			<input type="radio" name="commission type" id="commissionType" value="simple 3d model" onclick="window.commissionType = 'simple 3d model'" required>Simple 3D model<br>
+			<input type="radio" name="commission type" id="commissionType" value="full scene, no bckgd" onclick="window.commissionType = 'full scene, no bckgd'" required>Full scene (No background)<br>
+			<input type="radio" name="commission type" id="commissionType" value="full scene, simple bckgd" onclick="window.commissionType = 'full scene, simple bckgd'" required>Full scene (simple background)<br><br>
 			<input type="submit" value="Send">
 			<input type="reset" value="Reset">
 		<!-- disabled="disabled" /-->
