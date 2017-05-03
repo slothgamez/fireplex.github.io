@@ -53,7 +53,14 @@
 				var name = snapshot.val()._name;
 				var commissionType = snapshot.val()._commissionType;
 				var description = snapshot.val()._description;
-				alert(name);
+				var email = snapshot.val()._email;
+				var url = snapshot.val()._url;
+				
+				document.getElementById('userName').innerHTML = name;
+				document.getElementById('userCommissionType').innerHTML = commissionType;
+				document.getElememtById('userDescription').innerHTML = description;
+				document.getElementById('userEmail').innerHTML = email;
+				document.getElementById('userURL').innerHTML = url;
 			});
 		}
     /**
@@ -503,8 +510,31 @@
       </div>
     </div>
   </div>
-
-	
+			<button type="button" class="btn btn-default" aria-label="Refresh" onClick="readFormData()">
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Refresh
+			</button>
+			<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Commissioner email</th>
+					<th>Commission Type</th>
+					<th>Reference URL</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td id="userName">Null</td>
+					<td id="userEmail">Null</td>
+					<td id="userCommissionType">Null</td>
+					<td id="userRefURL">Null</td>
+					<td id="userDescription">Null</td>
+				</tr>
+			</tbody>
+		</table>
 	
 <footer>
     <div class="footer" id="footer">
