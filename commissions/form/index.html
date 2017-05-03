@@ -61,14 +61,14 @@
 			//var url = urlObject.value;
 			//var commissionType = commissionTypeObject.value;
 			
-			firebase.database().ref('users/' + uid).set({
+			firebase.database().ref('users/' + user.uid).set({
 				_name: name,
 				_replyTo: replyTo,
 				_description: description,
 				_url: url,
 				_commissionType: commissionType
 			})
-			Promise.resolve('Success').then(function(uid) {
+			Promise.resolve('Success').then(function(user.uid) {
 				console.log(name, replyTo, description, url, commissionType);
 			});
 			
