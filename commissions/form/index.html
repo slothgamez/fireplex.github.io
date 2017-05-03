@@ -60,8 +60,7 @@
 			//var description = descriptionObject.value;
 			//var url = urlObject.value;
 			//var commissionType = commissionTypeObject.value;
-			
-			firebase.database().ref('users/' + user.uid).set({
+			firebase.database().ref('users/' + window.userID).set({
 				_name: name,
 				_replyTo: replyTo,
 				_description: description,
@@ -243,7 +242,6 @@
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
 			document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
     }
-		alert(window.userID);
     window.onload = function() {
       initApp();
     };
