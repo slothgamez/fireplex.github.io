@@ -177,6 +177,7 @@
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+					var window.userID = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
@@ -242,6 +243,7 @@
       document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
 			document.getElementById('password-reset').addEventListener('click', handlePasswordReset, true);
     }
+		alert(window.userID);
     window.onload = function() {
       initApp();
     };
