@@ -55,6 +55,7 @@
 				var description = snapshot.val()._description;
 				var email = snapshot.val()._replyTo;
 				var url = snapshot.val()._url;
+				var status = snapshot.val()._status;
 				
 				if (name == null) {
 					alert("Error: Click refresh to display current commission data. If the value remains as null, either you have not previously submitted any commission requests or you are not signed in");
@@ -65,6 +66,7 @@
 				document.getElementById('userDescription').innerHTML = description;
 				document.getElementById('userEmail').innerHTML = email;
 				document.getElementById('userRefURL').innerHTML = url;
+				document.getElementById('userStatus').innerHTML = status;
 			});
 		}
     /**
@@ -526,6 +528,7 @@
 					<th>Commission Type</th>
 					<th>Reference URL</th>
 					<th>Description</th>
+					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -536,6 +539,7 @@
 					<td id="userCommissionType">Null</td>
 					<td id="userRefURL">Null</td>
 					<td id="userDescription">Null</td>
+					<td id="userStatus">Null</td>
 				</tr>
 			</tbody>
 		</table>
