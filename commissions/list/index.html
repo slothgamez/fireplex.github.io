@@ -48,7 +48,7 @@
 		 */
 		function readFormData() {
 			if (window.userID == null) {
-				alert("You are not signed in! Pleaser sign in to be able to view this data");
+				alert("You are not signed in! Please sign in to be able to view this data");
 			} else {
 				var formRef = firebase.database().ref('users/' + window.userID);
 
