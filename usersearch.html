@@ -544,11 +544,11 @@
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
 					var photourl = snapshot.val().profileurl;
-					if (snapshot.val().userid == null) {
+					if (userid == null) {
 						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
 						writeUserData()
 					} else {
-						alert("recieved value for user's ID, the value is: " + snapshot.val().userid);
+						alert("recieved value for user's ID, the value is: " + userid;
 					}
 			})};
 		</script>
