@@ -520,10 +520,10 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
-					if (snapshot.val() == null) {
+					if (snapshot.val().userid == null) {
 						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
 					} else {
-						alert("recieved value for user's ID, the value is: " + snapshot.val());
+						alert("recieved value for user's ID, the value is: " + snapshot.val().userid);
 					}
 			})};
 		</script>
