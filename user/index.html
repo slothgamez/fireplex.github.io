@@ -146,6 +146,7 @@
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+					window.userID = user.uid;
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
@@ -504,7 +505,7 @@
 		
 		var query = getParameterByName('userID');
 		
-		if (query == "window.userID") {
+		if (query == window.userID) {
 			//window.location.href = "https://fireplex.github.io;
 			alert("User is signed in and viewing their own profile");
 		} else {
