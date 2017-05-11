@@ -521,6 +521,9 @@
 			
 			useridRef.on('value', function(snapshot) {
 				alert("recieved value for user's ID, the value is: " + snapshot.val());
+				if (snapshot.val() == null) {
+					alert("Whoops! This user doesn't exist or there may be an internal error on our end");
+				}
 			})};
 		</script>
 	
