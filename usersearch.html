@@ -519,7 +519,7 @@
 			function readUserData() {
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
-			userid.on('value', function(snapshot) {
+			useridRef.on('value', function(snapshot) {
 				alert("recieved value for user's ID, the value is: " + snapshot.val());
 			})};
 		</script>
