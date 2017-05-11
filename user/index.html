@@ -16,7 +16,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="The homepage for my Blender porfolio. Here you'll find all my recent submissions at the latest updates.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>User homepage - Feeka's Blender Portfolio</title>
     
@@ -490,7 +489,31 @@
     </div>
   </div>
 	<!--start of content-->
+	<script>
+		function getParameterByName(name, url) {
+				if (!url) {
+					url = window.location.href;
+				}
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+						results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
 		
+		var query = getParameterbByName('userID');
+		
+		if (window.userID != null) {
+			if (query == "window.userID") {
+				//window.location.href = "https://fireplex.github.io;
+				alert("User is signed in and viewing their own profile");
+			}
+			if (query == null) {
+				window.location.href = "https://fireplex.github.io/404.html";
+			}
+		}
+	</script>
 	<!--end of content-->
 <footer>
     <div class="footer" id="footer">
