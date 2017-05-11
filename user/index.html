@@ -506,12 +506,9 @@
 		var query = getParameterByName('userID');
 		
 		if (query == window.userID) {
+			console.error("User is signed in and viewing their own profile");
+			console.log("User is signed in and viewing their own profile");
 			//window.location.href = "https://fireplex.github.io;
-			alert("User is signed in and viewing their own profile");
-		} else {
-			if (query == null) {
-				window.location.href = "https://fireplex.github.io/404.html";
-			}
 		}
 	</script>
 	<!--end of content-->
