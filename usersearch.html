@@ -544,15 +544,26 @@
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
 					var photourl = window.photoURL;
+					var bio = snapshot.val().bio;
 					if (userid == null) {
 						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
 						writeUserData()
 					} else {
 						alert("recieved value for user's ID, the value is: " + userid);
+						var img = document.getElementById('profilepicture');
+						img.src = photourl;
+						document.getElememtById('displayname').innerHTML = username;
+						document.getElementById('bio').innerHTML = bio;
 					}
 			})};
 		</script>
-	
+		<!--START OF CONTENT-->
+			<div>
+				<img src="" width="" height=""/><br>
+				<p id="displayname">Null</p>
+			</div><br>
+			<p id="bio">Null</p>
+		<!--END OF CONTENT-->
 <footer>
     <div class="footer" id="footer">
         <div class="container">
