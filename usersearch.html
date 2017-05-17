@@ -543,7 +543,7 @@
 			useridRef.on('value', function(snapshot) {
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
-					var photourl = snapshot.val().profileurl;
+					var photourl = window.photoURL;
 					if (userid == null) {
 						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
 						writeUserData()
