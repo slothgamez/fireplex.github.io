@@ -42,6 +42,27 @@
 </script>
 
   <script type="text/javascript">
+		/**
+		 * 
+		 */
+		function biosubmit() {
+			if (window.userID != null) {
+				var tempuserid = window.userID;
+				var tempdisplayname = window.displayName;
+				var tempphotourl = window.photoURL;
+				var tempbio = document.getElementById('bioedit').value;
+				
+				firebase.database().ref('userlist/' + tempdisplayname).set({
+					userid: tempuserid,
+					displayname: tempdisplayname,
+					profileurl : tempphotourl,
+					bio : tempbio
+				})
+				Promise.resolve('Success').then(function(userid, displayname, profileurl, bio) {
+				//console.log(userName, userEmail, userProfilePicture, testSub);
+				});
+			}
+		}
     /**
      * Handles the password reset processsssss
      */
@@ -574,7 +595,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="quickstart-sign-up" name="signup">Submit</button>
+					<button type="button" class="btn btn-primary" id="quickstart-sign-up" name="signup" onclick="biosubmit()">Submit</button>
         </div>
       </div>
       
