@@ -566,15 +566,19 @@
 					var userid = snapshot.val().userid;
 					var photourl = window.photoURL;
 					var bio = snapshot.val().bio;
-					if (userid == null) {
-						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-						writeUserData()
+					if (window.userID == null) {
+						if (userid == null) {
+							alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+							writeUserData()
+						} else {
+							alert("recieved value for user's ID, the value is: " + userid);
+							var img = document.getElementById('profilepicture');
+							img.src = photourl;
+							document.getElementById('displayname').innerHTML = username;
+							document.getElementById('bio').innerHTML = bio;
+						}
 					} else {
-						alert("recieved value for user's ID, the value is: " + userid);
-						var img = document.getElementById('profilepicture');
-						img.src = photourl;
-						document.getElementById('displayname').innerHTML = username;
-						document.getElementById('bio').innerHTML = bio;
+						
 					}
 			})};
 		</script>
