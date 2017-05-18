@@ -564,7 +564,8 @@
 			useridRef.on('value', function(snapshot) {
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
-					var photourl = window.photoURL;
+					//var photourl = window.photoURL;
+					var photourl = snapshot.val().profileurl;
 					var bio = snapshot.val().bio;
 					if (userid == null) {
 						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
