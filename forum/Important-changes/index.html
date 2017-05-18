@@ -16,8 +16,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="...">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Earth - Feeka's Blender Portfolio</title>
+    <title>Forum (Important changes) - Feeka's Blender Portfolio</title>
     
     <!-- Latest jquery -->
 		<script src="https://fireplex.github.io/jquery-3.1.1.min.js"></script>
@@ -80,8 +81,14 @@
           var errorCode = error.code;
           var errorMessage = error.message;
           // [START_EXCLUDE]
+					if (errorCode == "auth/user-disabled") {
+						document.getElementById("errorSpan").innerHTML = "This account was disabled";
+					}
+					if (errorCode == "auth/user-not-found") {
+						document.getElementById("errorSpan").innerHTML = "User deleted the account or doesn't exist";
+					}
           if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
+            document.getElementById("errorSpan").innerHTML = "Password or email is incorrect";
           } else {
             console.error(error);
           }
@@ -150,6 +157,7 @@
           	document.getElementById('quickstart-sign-in-status').textContent = 'Hello ' + displayName + '! Signed in succesfully';
           }
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+					document.getElementById('errorSpan').textContent = 'Hello ' + displayName + '. Signed in succesfully.';
 	  } else {
 				//Popup request for resending verification email
 				swal({
@@ -192,6 +200,7 @@
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+					document.getElementById('errorSpan').textContent = 'Signed out';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
@@ -207,11 +216,169 @@
       initApp();
     };
   </script>
-	<style>
-		#disqus_thread {
-			width: 30%;
-		}
-	</style>
+<style>
+	.full {
+    width: 100%;    
+}
+.gap {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	display: block;
+}
+.footer {
+	background: #222222;
+	height: auto;
+	padding-bottom: 30px;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 325px;
+}
+.footer p {
+	margin: 0;
+}
+.footer img {
+	max-width: 100%;
+}
+.footer h3 {
+	border-bottom: 1px solid #BAC1C8;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px 0 10px;
+	text-transform: uppercase;
+}
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #;
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;
+}
+.footer a {
+	color: #ffffff
+}
+.supportLi h4 {
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: normal;
+	margin-bottom: 0 !important;
+	padding-bottom: 0;
+}
+.newsletter-box input#appendedInputButton {
+	background: #FFFFFF;
+	display: inline-block;
+	float: left;
+	height: 30px;
+	clear: both;
+	width: 100%;
+}
+.newsletter-box .btn {
+	border: medium none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100%;
+	color: #fff;
+}
+.newsletter-box {
+	overflow: hidden;
+}
+.bg-gray {
+	background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
+	box-shadow: 0 1px 0 #B4B3B3;
+}
+.social li {
+	background: none repeat scroll 0 0 #888888;
+	border: 2px solid #B5B5B5;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+.social li a {
+	color: #EDEFF1;
+}
+.social li:hover {
+	border: 2px solid #2c3e50;
+    	background: #2c3e50;
+}
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+	color: #EDEFF1 !important;
+}
+.footer-bottom {
+	background: #E3E3E3;
+	border-top: 1px solid #DDDDDD;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+}
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+}
+.payments {
+	font-size: 1.5em;	
+}
+/*seperator*/
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}
+</style>
 <body background="background.png">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -229,18 +396,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="http://fireplex.github.io">Homepage </a></li>
-        <li><a href="#">Forum </a></li>
-        <li><a href="#">About </a></li>
-        <li><a href="http://fireplex.github.io/contact">Contact </a></li>
-        <li><a href="http://fireplex.github.io/commissions">Commissioning </a></li>
+        <li><a href="https://fireplex.github.io">Homepage </a></li>
+        <li class="active"><a href="#">Forum <span class="sr-only">(current)</span></a></li>
+        <li><a href="https://fireplex.github.io/about">About </a></li>
+        <li><a href="https://fireplex.github.io/contact">Contact </a></li>
+        <li><a href="https://fireplex.github.io/commissions">Commissioning </a></li>
        	
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Sign-up <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Login </a></li>
             <li><a href="#" data-toggle="modal" data-target="#signupModal">Sign up </a></li>
-						<li><a href="http://fireplex.github.io/account-settings">Account settings </a></li>
+						<li><a href="https://fireplex.github.io/account-settings">Account settings </a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" style="font-size: 12px;" data-toggle="modal" data-target="#passresetModal">Forgot your password? </a></li>
           </ul>
@@ -268,6 +435,7 @@
 					<!-- Modal body end -->
         </div>
         <div class="modal-footer">
+					<span id="errorSpan" style="color:grey">Signed out</span><br/>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button disabled name="signin" id="quickstart-sign-in" type="button" class="btn btn-primary">Login</button>
         </div>
@@ -326,39 +494,50 @@
       
     </div>
   </div>
-
-	<div id="submission image">
-		<img src="https://fireplex.github.io/submmissions/earth/earth.png" height="270px" width="480px"/>
+	<!--START OF CONTENT-->
+	<div class="page-header page-heading">
+			<h1 class="pull-left">Important changes</h1>
+			<div class="clearfix"></div>
 	</div>
-	<h4>Render details</h4>
-	<p>Render time: Roughly 10 minutes</p>
-	<p>Render sample amount: 200</p>
-	<p>Native render resolution: 1563 x 864</p>
-	<h4>Rendering system details</h4>
-	<p>Rendering device: GPU</p>
-	<p>CPU: Dual core Celeron E1200 @ 1.6GHz</p>
-	<p>GPU: RX 460 2GB Sapphire Edition</p>
-	<p>System Memory: 2x 1GB DDR2</p>
-	<p>OS: Windows 10 64 bit</p><br>
-	<div id="disqus_thread"></div>
-	<script>
-
-	/**
-	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-	/*
-	var disqus_config = function () {
-	this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	};
-	*/
-	(function() { // DON'T EDIT BELOW THIS LINE
-	var d = document, s = d.createElement('script');
-	s.src = 'https://fireplex-github-io.disqus.com/embed.js';
-	s.setAttribute('data-timestamp', +new Date());
-	(d.head || d.body).appendChild(s);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<p class="lead">All updates to do with either this site or my work in general will be found on here.</p>
+	
+	<div class="list-group">
+		<a href="https://fireplex.github.io/forum/Important-changes/website-update-V2.1.5" class="list-group-item">Website update V2.1.5</a>
+	</div>
+	<!--END OF CONTENT--><br><br>
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Homepage </h3>
+                    <ul>
+                        <li> <a href="https://fireplex.github.io/scraps"> Scraps </a> </li>
+                        <li> <a href="https://fireplex.github.io/account-settings"> Account settings </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Commissions </h3>
+                    <ul>
+                        <li> <a href="https://fireplex.github.io/commissions/status"> Status </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/prices"> Prices </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/form"> Commission form </a> </li>
+                        <li> <a href="https://fireplex.github.io/commissions/wips"> WIP's </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Kyle Langford 2017. All right reserved. </p>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
 </body>
 </html>

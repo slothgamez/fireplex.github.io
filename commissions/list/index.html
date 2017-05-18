@@ -47,21 +47,31 @@
 		 * Pull the form data submitted from the form page ready to be placed in a table
 		 */
 		function readFormData() {
-			var formRef = firebase.database().ref('users/' + window.userID);
-			
-			formRef.on('value', function(snapshot) {
-				var name = snapshot.val()._name;
-				var commissionType = snapshot.val()._commissionType;
-				var description = snapshot.val()._description;
-				var email = snapshot.val()._replyTo;
-				var url = snapshot.val()._url;
-				
-				document.getElementById('userName').innerHTML = name;
-				document.getElementById('userCommissionType').innerHTML = commissionType;
-				document.getElementById('userDescription').innerHTML = description;
-				document.getElementById('userEmail').innerHTML = email;
-				document.getElementById('userURL').innerHTML = url;
-			});
+			if (window.userID == null) {
+				alert("You are not signed in! Please sign in to be able to view this data");
+			} else {
+				var formRef = firebase.database().ref('users/' + window.userID);
+
+				formRef.on('value', function(snapshot) {
+					var name = snapshot.val()._name;
+					var commissionType = snapshot.val()._commissionType;
+					var description = snapshot.val()._description;
+					var email = snapshot.val()._replyTo;
+					var url = snapshot.val()._url;
+					var status = snapshot.val()._status;
+
+					if (name == null) {
+						alert("Error: Click refresh to display current commission data. If the value remains as null, either you have not previously submitted any commission requests or you are not signed in");
+					}
+
+					document.getElementById('userName').innerHTML = name;
+					document.getElementById('userCommissionType').innerHTML = commissionType;
+					document.getElementById('userDescription').innerHTML = description;
+					document.getElementById('userEmail').innerHTML = email;
+					document.getElementById('userRefURL').innerHTML = url;
+					document.getElementById('userStatus').innerHTML = status;
+				});
+			}
 		}
     /**
      * Handles the password reset process
@@ -522,6 +532,7 @@
 					<th>Commission Type</th>
 					<th>Reference URL</th>
 					<th>Description</th>
+					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -532,6 +543,7 @@
 					<td id="userCommissionType">Null</td>
 					<td id="userRefURL">Null</td>
 					<td id="userDescription">Null</td>
+					<td id="userStatus">Null</td>
 				</tr>
 			</tbody>
 		</table>

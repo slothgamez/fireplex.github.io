@@ -61,18 +61,20 @@
 			//var description = descriptionObject.value;
 			//var url = urlObject.value;
 			//var commissionType = commissionTypeObject.value;
-			firebase.database().ref('users/' + window.userID).set({
-				_name: name,
-				_replyTo: replyTo,
-				_description: description,
-				_url: url,
-				_commissionType: commissionType
-			})
-			Promise.resolve('Success').then(function() {
-				console.log(name, replyTo, description, url, commissionType);
-			});
-			
-		};
+			if (name != null & replyTo != null & description != null & url != null & commissionType != null) {
+				firebase.database().ref('users/' + window.userID).set({
+					_name: name,
+					_replyTo: replyTo,
+					_description: description,
+					_url: url,
+					_commissionType: commissionType,
+					_status: 'Pending review'
+				})
+				Promise.resolve('Success').then(function() {
+					console.log(name, replyTo, description, url, commissionType);
+				});
+			} //EOI
+		}; //EOF
     /**
      * Handles the password reset process
      */
@@ -264,7 +266,7 @@
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -380,7 +382,7 @@
 	border-top: 1px solid #DDDDDD;
 	padding-top: 10px;
 	padding-bottom: 10px;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -523,10 +525,11 @@
 			<input type="radio" name="commission type" id="commissionType" value="simple 3d model" onclick="window.commissionType = 'simple 3d model'" required>Simple 3D model<br>
 			<input type="radio" name="commission type" id="commissionType" value="full scene, no bckgd" onclick="window.commissionType = 'full scene, no bckgd'" required>Full scene (No background)<br>
 			<input type="radio" name="commission type" id="commissionType" value="full scene, simple bckgd" onclick="window.commissionType = 'full scene, simple bckgd'" required>Full scene (simple background)<br><br>
-			<input type="submit" value="Send">
+			<input type="submit" value="Send" onclick="writeFormData()">
 			<input type="reset" value="Reset">
 		<!-- disabled="disabled" /-->
 	</form>
+	<p>Warning: Only one commission is currently allowed per person. More than one submission will overwrite your previous commission if not previously accepted or being worked on already.</p>
 <footer>
     <div class="footer" id="footer">
         <div class="container">
