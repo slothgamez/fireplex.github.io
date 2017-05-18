@@ -571,6 +571,9 @@
 					return decodeURIComponent(results[2].replace(/\+/g, " "));
 			}
 			var query = getParameterByName('userID');
+			if (query != null) {
+				readUserData();
+			}
 			
 			function writeUserData() {
 				if (window.userID != null) {
