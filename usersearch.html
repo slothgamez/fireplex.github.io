@@ -601,9 +601,9 @@
 					var bio = snapshot.val().bio;
 				
 					if (userid == window.userID) {
-						document.getElementById('bioeditButton').display.visibility = 'none';
+						document.getElementById('bioeditButton').style.display = 'block';
 					} else {
-						document.getElementById('bioeditButton').display.visibility = 'block';
+						document.getElementById('bioeditButton').style.display = 'none';
 					}
 				
 					if (userid == null) {
