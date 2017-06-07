@@ -608,6 +608,8 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
+					alert(snapshot.val().displayname); // new value
+					
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
 					//var photourl = window.photoURL;
