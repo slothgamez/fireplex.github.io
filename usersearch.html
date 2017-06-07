@@ -42,6 +42,11 @@
 </script>
 
   <script type="text/javascript">
+		function searchUser() {
+			userName = document.getElementById('usersearchName').value;
+			alert(userName);
+		}
+
 		/**
 		 * 
 		 */
@@ -446,9 +451,9 @@
 
 				<form class="navbar-form navbar-left">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
+						<input type="text" class="form-control" placeholder="Search for other users" id="usersearchName">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default" onClick="searchUser()">Submit</button>
 				</form>
 
       </ul>
