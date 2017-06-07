@@ -43,8 +43,9 @@
 
   <script type="text/javascript">
 		function searchUser() {
-			userName = document.getElementById('usersearchName').value;
-			window.location.href = "https://fireplex.github.io/usersearch?userID=" + userName;
+			var userName = document.getElementById('usersearchName').value;
+			var finalurl = "https://fireplex.github.io/usersearch?userID=" + userName;
+			window.location.href = finalurl;
 		}
 
 		/**
