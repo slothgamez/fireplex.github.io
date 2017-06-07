@@ -611,32 +611,35 @@
 					alert(snapshot.val().displayname); // new value
 					window.namealert = username;
 					
-					var username = snapshot.val().displayname;
-					var userid = snapshot.val().userid;
-					//var photourl = window.photoURL;
-					var photourl = snapshot.val().profileurl;
-					var bio = snapshot.val().bio;
-				
-					if (userid == window.userID) {
-						document.getElementById('bioeditButton').style.display = 'block';
-					} else {
-						document.getElementById('bioeditButton').style.display = 'none';
+					if (snapshot.val().displayname == '') {
+						alert("displayname is null");
 					}
+					
+					//var username = snapshot.val().displayname;
+					//var userid = snapshot.val().userid;
+					//var photourl = snapshot.val().profileurl;
+					//var bio = snapshot.val().bio;
 				
-					if (userid == null) {
-						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-						writeUserData()
-					} else {
-						if (username == 'undefined') {
-							alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-						}
-						
-						alert("recieved value for user's ID, the value is: " + userid);
-						var img = document.getElementById('profilepicture');
-						img.src = photourl;
-						document.getElementById('displayname').innerHTML = username;
-						document.getElementById('bio').innerHTML = bio;
-					}
+					//if (userid == window.userID) {
+					//	document.getElementById('bioeditButton').style.display = 'block';
+					//} else {
+					//	document.getElementById('bioeditButton').style.display = 'none';
+					//}
+				
+					//if (userid == null) {
+					//	alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+					//	writeUserData()
+					//} else {
+					//	if (username == 'undefined') {
+					//		alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+					//	}
+					//	
+					//	alert("recieved value for user's ID, the value is: " + userid);
+					//	var img = document.getElementById('profilepicture');
+					//	img.src = photourl;
+					//	document.getElementById('displayname').innerHTML = username;
+					//	document.getElementById('bio').innerHTML = bio;
+					//}
 			})};
 		</script>
 <footer>
