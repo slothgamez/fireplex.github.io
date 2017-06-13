@@ -608,7 +608,7 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
-				if (typeof snapshot.val().username !== 'undefined' || typeof snapshot.val().userename !== null ) {
+				if (typeof snapshot.val().username !== 'undefined' && typeof snapshot.val().userename !== null ) {
 					alert("true");
 				} else {
 					alert("false");
