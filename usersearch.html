@@ -608,11 +608,14 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
+					if(typeof snapshot != "undefined" && snapshot.val().displayname) {
+						console.log('defined already');
+					}
 					//window.namealert = username;
 					
-					if (snapshot.val().displayname == '') {
-						alert("displayname is null");
-					}
+					//if (snapshot.val().displayname == '') {
+					//	alert("displayname is null");
+					//}
 					
 					//var username = snapshot.val().displayname;
 					//var userid = snapshot.val().userid;
