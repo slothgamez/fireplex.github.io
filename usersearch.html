@@ -608,7 +608,16 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
-					try{ var foo = snapshot.val().username; } catch(){}
+				function resolve(path, root){
+					root = root || window;
+					return path.split('.').reduce(function(parent, child){
+						// A quick check for brevity. You can replace this with a better check
+						// and return logic.
+						return parent && parent[child];
+					}, root);
+				}
+				
+				var foo = resolve('snapshot.val().username');
 					
 					if(foo !== undefined){
 						alert("true");
