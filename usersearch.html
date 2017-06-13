@@ -608,10 +608,10 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
-				if (typeof snapshot.val().username !== 'undefined' && typeof snapshot.val().userename !== null ) {
-					alert("true");
+				if (typeof snapshot.val().username === undefined || typeof snapshot.val().username === null) {
+					alert("Snapshot username value is null or undefined");
 				} else {
-					alert("false");
+					alert("The snapshot username child object has been assigned a value already");
 				}
 					//window.namealert = username;
 					
