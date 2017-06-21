@@ -618,6 +618,10 @@
 					if (snapshot.val().displayname == '') {
 						alert("displayname is null");
 					}
+				
+					if (document.getElememtById('displayname').value == null) {
+						alert("displayname is null");
+					}
 					
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
