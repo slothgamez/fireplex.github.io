@@ -619,8 +619,8 @@
 						alert("displayname is null");
 					}
 					var displayname = document.getElementById('displayname').value;
-					if (displayname == "") {
-						alert("displayname is null");
+					if (displayname == undefined) {
+						alert("displayname is undefined");
 					}
 					
 					var username = snapshot.val().displayname;
