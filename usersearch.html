@@ -564,7 +564,7 @@
 			<div class="page-header">
 				<img src="https://fireplex.github.io/firebase/account/silhouette.jpg" width="100" height="100" id="profilepicture"/>&nbsp;<h1 id="displayname"></h1>
 			</div><br>
-			<p id="bio">Null</p>
+			<p id="bio"The requested user cannot be found</p>
 			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#bioeditModal" id="bioeditButton">
 				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
 			</button>
@@ -608,42 +608,42 @@
 			var useridRef = firebase.database().ref('userlist/' + query);
 			
 			useridRef.on('value', function(snapshot) {
-				if (typeof snapshot == undefined || typeof snapshot.val() == undefined || typeof snapshot.val().username == undefined) {
+				/*if (typeof snapshot == undefined || typeof snapshot.val() == undefined || typeof snapshot.val().username == undefined) {
 					alert("Snapshot username value is null or undefined");
 				} else {
 					alert("The snapshot username child object has been assigned a value already");
-				}
-					//window.namealert = username;
+				}*/
+					window.namealert = username;
 					
-					//if (snapshot.val().displayname == '') {
-					//	alert("displayname is null");
-					//}
+					if (snapshot.val().displayname == '') {
+						alert("displayname is null");
+					}
 					
-					//var username = snapshot.val().displayname;
-					//var userid = snapshot.val().userid;
-					//var photourl = snapshot.val().profileurl;
-					//var bio = snapshot.val().bio;
+					var username = snapshot.val().displayname;
+					var userid = snapshot.val().userid;
+					var photourl = snapshot.val().profileurl;
+					var bio = snapshot.val().bio;
 				
-					//if (userid == window.userID) {
-					//	document.getElementById('bioeditButton').style.display = 'block';
-					//} else {
-					//	document.getElementById('bioeditButton').style.display = 'none';
-					//}
+					if (userid == window.userID) {
+						document.getElementById('bioeditButton').style.display = 'block';
+					} else {
+						document.getElementById('bioeditButton').style.display = 'none';
+					}
 				
-					//if (userid == null) {
-					//	alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-					//	writeUserData()
-					//} else {
-					//	if (username == 'undefined') {
-					//		alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-					//	}
-					//	
-					//	alert("recieved value for user's ID, the value is: " + userid);
-					//	var img = document.getElementById('profilepicture');
-					//	img.src = photourl;
-					//	document.getElementById('displayname').innerHTML = username;
-					//	document.getElementById('bio').innerHTML = bio;
-					//}
+					if (userid == null) {
+						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+						writeUserData()
+					} else {
+						if (username == 'undefined') {
+							alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+						}
+						
+						alert("recieved value for user's ID, the value is: " + userid);
+						var img = document.getElementById('profilepicture');
+						img.src = photourl;
+						document.getElementById('displayname').innerHTML = username;
+						document.getElementById('bio').innerHTML = bio;
+					}
 			})};
 		</script>
 <footer>
