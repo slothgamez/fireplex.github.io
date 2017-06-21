@@ -614,10 +614,6 @@
 					alert("The snapshot username child object has been assigned a value already");
 				}*/
 					var displayname = document.getElementById('displayname').value;
-					if (displayname == undefined) {
-						alert("displayname is undefined");
-					}
-					
 					var username = snapshot.val().displayname;
 					var userid = snapshot.val().userid;
 					var photourl = snapshot.val().profileurl;
@@ -642,7 +638,11 @@
 						img.src = photourl;
 						document.getElementById('displayname').innerHTML = username;
 						document.getElementById('bio').innerHTML = bio;
-					}
+						
+						if (displayname == undefined) {
+							document.getElementById('bio').innerHTML = 'Null User';
+							document.getElementById('displayname').innerHTMl = 'The current user doesnt exist';
+						}
 			})};
 		</script>
 <footer>
