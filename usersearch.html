@@ -626,22 +626,15 @@
 					}
 				
 					if (userid == null) {
-						alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
+						document.getElementById('bio').innerHTML = 'Null User';
+						document.getElementById('displayname').innerHTMl = 'The current user doesnt exist';
 						writeUserData()
 					} else {
-						if (username == 'undefined') {
-							alert("Whoops! The current user either doesn't exist or we've crossed an internal error");
-						}
 						var img = document.getElementById('profilepicture');
 						img.src = photourl;
 						document.getElementById('displayname').innerHTML = username;
 						document.getElementById('bio').innerHTML = bio;
-					}
-				
-					if (displayname == undefined) {
-						document.getElementById('bio').innerHTML = 'Null User';
-						document.getElementById('displayname').innerHTMl = 'The current user doesnt exist';
-					})}
+					})};
 		</script>
 <footer>
     <div class="footer" id="footer">
