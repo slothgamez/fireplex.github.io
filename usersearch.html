@@ -625,7 +625,7 @@
 						document.getElementById('bioeditButton').style.display = 'none';
 					}
 				
-					if (userid == undefined) {
+					if (userid === undefined || userid === null || userid === "") {
 						alert("Whoops! Seems this user does not exist");
 						writeUserData()
 					} else {
