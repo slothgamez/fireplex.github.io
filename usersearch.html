@@ -619,13 +619,10 @@
 					var photourl = snapshot.val().profileurl;
 					var bio = snapshot.val().bio;
 				
-					if (userid == window.userID) {
-						document.getElementById('bioeditButton').style.display = 'block';
-					} else {
-						document.getElementById('bioeditButton').style.display = 'none';
-					}
-				
-					if (userid === undefined || userid === null || userid === "") {
+					//Check if the displayname is empty to see if the user was found, if not, alert the user
+					//If the user is found set the users bio and username element to the database value
+					//Also check if the user ID is the same as the searched user. If so enable editing on the bio.
+					if (displayname === undefined || displayname === null || displayname === "") {
 						alert("Whoops! Seems this user does not exist");
 						writeUserData()
 					} else {
@@ -633,6 +630,12 @@
 						img.src = photourl;
 						document.getElementById('displayname').innerHTML = username;
 						document.getElementById('bio').innerHTML = bio;
+						
+						if (userid == window.userID) {
+							document.getElementById('bioeditButton').style.display = 'block';
+						} else {
+							document.getElementById('bioeditButton').style.display = 'none';
+						}
 					}
 			})};
 		</script>
