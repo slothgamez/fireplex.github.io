@@ -625,7 +625,7 @@
 						document.getElementById('bioeditButton').style.display = 'none';
 					}
 				
-					if (userid == null) {
+					if (userid == undefined) {
 						document.getElementById('bio').innerHTML = 'Null User';
 						document.getElementById('displayname').innerHTMl = 'The current user doesnt exist';
 						writeUserData()
