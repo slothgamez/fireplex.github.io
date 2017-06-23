@@ -626,8 +626,7 @@
 					}
 				
 					if (userid == undefined) {
-						document.getElementById('bio').innerHTML = 'Null User';
-						document.getElementById('displayname').innerHTMl = 'The current user doesnt exist';
+						alert("Whoops! Seems this user does not exist");
 						writeUserData()
 					} else {
 						var img = document.getElementById('profilepicture');
